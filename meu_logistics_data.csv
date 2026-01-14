@@ -1,0 +1,1384 @@
+# TABLE: unit_reference
+unit_id,unit_name,element,echelon,personnel,notes
+MEU-CE,MEU Command Element,Command,MEU,450,Command and control element
+BLT-1/5,Battalion Landing Team 1/5,Infantry,BN(-),1200,Infantry battalion minus
+ACE-31,Aviation Combat Element 31,Aviation,ACE,850,12x MV-22, 4x CH-53, 6x AH-1Z, 4x UH-1Y
+LCE-15,Logistics Combat Element 15,Logistics,LCE,600,Supply, maintenance, medical support
+ARG-1,Amphibious Ready Group 1,Maritime,ARG,1200,3x LHD/LHA, 1x LPD, 1x LSD
+
+# TABLE: unit_daily_demand
+unit_id,tempo,fuel_m3_day,ammo_tons_day,spares_tons_day,water_m3_day,food_tons_day,medical_kg_day
+MEU-CE,PRESENCE,8,0.2,0.5,45,2.5,15
+MEU-CE,DEFENSIVE,12,0.8,1.2,50,2.8,25
+MEU-CE,OFFENSIVE,15,1.5,2.0,52,3.0,40
+BLT-1/5,PRESENCE,25,2.5,1.5,180,8.5,35
+BLT-1/5,DEFENSIVE,35,12.0,3.5,195,9.0,65
+BLT-1/5,OFFENSIVE,45,28.0,6.0,200,9.5,95
+ACE-31,PRESENCE,180,1.5,8.0,120,6.0,20
+ACE-31,DEFENSIVE,320,8.0,15.0,130,6.5,45
+ACE-31,OFFENSIVE,520,22.0,28.0,140,7.0,75
+LCE-15,PRESENCE,15,0.1,2.0,80,4.0,10
+LCE-15,DEFENSIVE,22,0.3,4.5,90,4.5,20
+LCE-15,OFFENSIVE,30,0.5,8.0,95,5.0,35
+ARG-1,PRESENCE,120,0.0,3.0,200,12.0,15
+ARG-1,DEFENSIVE,180,0.0,6.0,220,13.0,25
+ARG-1,OFFENSIVE,240,0.0,12.0,240,14.0,40
+
+# TABLE: ammo_breakdown
+unit_id,tempo,small_arms_tons_day,mortar_tons_day,atgm_tons_day,shorad_missile_tons_day,aviation_munitions_tons_day
+MEU-CE,PRESENCE,0.1,0.0,0.0,0.1,0.0
+MEU-CE,DEFENSIVE,0.3,0.0,0.0,0.5,0.0
+MEU-CE,OFFENSIVE,0.6,0.0,0.0,0.9,0.0
+BLT-1/5,PRESENCE,1.2,0.8,0.3,0.2,0.0
+BLT-1/5,DEFENSIVE,5.5,4.2,1.8,0.5,0.0
+BLT-1/5,OFFENSIVE,12.5,10.0,4.5,1.0,0.0
+ACE-31,PRESENCE,0.0,0.0,0.0,0.0,1.5
+ACE-31,DEFENSIVE,0.0,0.0,0.0,0.0,8.0
+ACE-31,OFFENSIVE,0.0,0.0,0.0,0.0,22.0
+LCE-15,PRESENCE,0.05,0.0,0.0,0.05,0.0
+LCE-15,DEFENSIVE,0.15,0.0,0.0,0.15,0.0
+LCE-15,OFFENSIVE,0.25,0.0,0.0,0.25,0.0
+ARG-1,PRESENCE,0.0,0.0,0.0,0.0,0.0
+ARG-1,DEFENSIVE,0.0,0.0,0.0,0.0,0.0
+ARG-1,OFFENSIVE,0.0,0.0,0.0,0.0,0.0
+
+# TABLE: seaport_throughput
+node_id,node_name,location,max_containers_teu_day,max_bulk_tons_day,fuel_offload_m3_day,reliability
+SP-GUAM,Apra Harbor,Guam,1200,8500,4500,0.92
+SP-OKINAWA,White Beach,Naha Okinawa,650,5000,3200,0.82
+SP-PHIL,Subic Bay,Philippines,480,3600,2500,0.68
+SP-AUS,Darwin Port,Australia,1500,12000,6000,0.95
+SP-AUSTERE,Unnamed Atoll,Western Pacific,50,200,150,0.65
+
+# TABLE: airfield_throughput
+node_id,airfield_name,location,runway_class,max_sorties_day,max_cargo_tons_day,fuel_issue_m3_day,reliability
+AF-GUAM,Andersen AFB,Guam,strategic,180,450,3200,0.90
+AF-OKINAWA,Kadena AB,Okinawa,strategic,220,520,3800,0.87
+AF-PHIL,Clark AB,Philippines,tactical,95,220,1400,0.68
+AF-AUS,Darwin IAP,Australia,strategic,200,480,3500,0.93
+AF-AUSTERE,Expeditionary Strip,Western Pacific,austere,40,80,400,0.60
+
+# TABLE: seaport_infrastructure
+node_id,crane_id,crane_type,lift_capacity_tons,operational_status,berth_assigned,operating_hours_per_day,maintenance_interval_hours,notes
+SP-GUAM,CRANE-GUAM-01,Container Gantry,65,Operational,Berth 1,20,500,Post-Panamax container crane
+SP-GUAM,CRANE-GUAM-02,Container Gantry,65,Operational,Berth 2,20,500,Post-Panamax container crane
+SP-GUAM,CRANE-GUAM-03,Container Gantry,65,Operational,Berth 3,20,500,Post-Panamax container crane
+SP-GUAM,CRANE-GUAM-04,Container Gantry,50,Operational,Berth 4,18,450,Panamax container crane
+SP-GUAM,CRANE-GUAM-05,Mobile Harbor,40,Operational,Berth 5,16,400,Mobile container crane
+SP-GUAM,CRANE-GUAM-06,Bulk Material,25,Operational,Berth 6,12,350,Bulk cargo handling
+SP-GUAM,CRANE-GUAM-07,Fuel Offload,15,Operational,Berth 7,24,600,Fuel pipeline crane
+SP-GUAM,CRANE-GUAM-08,General Purpose,20,Operational,Berth 8,16,400,General cargo
+SP-OKINAWA,CRANE-OKI-01,Container Gantry,50,Maintenance,Berth 1,0,450,Panamax container crane - scheduled maintenance
+SP-OKINAWA,CRANE-OKI-02,Container Gantry,50,Operational,Berth 2,14,450,Panamax container crane - reduced hours
+SP-OKINAWA,CRANE-OKI-03,Mobile Harbor,40,Operational,Berth 3,12,400,Mobile container crane - reduced hours
+SP-OKINAWA,CRANE-OKI-04,Bulk Material,25,Operational,Berth 4,10,350,Bulk cargo handling - reduced hours
+SP-OKINAWA,CRANE-OKI-05,Fuel Offload,15,Operational,Berth 5,24,600,Fuel pipeline crane
+SP-OKINAWA,CRANE-OKI-06,General Purpose,20,Operational,Berth 6,12,400,General cargo - reduced hours
+SP-PHIL,CRANE-PHIL-01,Container Gantry,50,Operational,Berth 1,12,450,Panamax container crane - reduced hours
+SP-PHIL,CRANE-PHIL-02,Mobile Harbor,40,Limited,Berth 2,8,400,Mobile container crane - intermittent operation
+SP-PHIL,CRANE-PHIL-03,Bulk Material,25,Operational,Berth 3,10,350,Bulk cargo handling - reduced hours
+SP-PHIL,CRANE-PHIL-04,Fuel Offload,15,Operational,Berth 4,18,600,Fuel pipeline crane - reduced hours
+SP-PHIL,CRANE-PHIL-05,General Purpose,20,Maintenance,Berth 5,0,400,General cargo - awaiting parts
+SP-AUS,CRANE-AUS-01,Container Gantry,65,Operational,Berth 1,22,500,Post-Panamax container crane
+SP-AUS,CRANE-AUS-02,Container Gantry,65,Operational,Berth 2,22,500,Post-Panamax container crane
+SP-AUS,CRANE-AUS-03,Container Gantry,65,Operational,Berth 3,22,500,Post-Panamax container crane
+SP-AUS,CRANE-AUS-04,Container Gantry,50,Operational,Berth 4,20,450,Panamax container crane
+SP-AUS,CRANE-AUS-05,Container Gantry,50,Operational,Berth 5,20,450,Panamax container crane
+SP-AUS,CRANE-AUS-06,Mobile Harbor,40,Operational,Berth 6,18,400,Mobile container crane
+SP-AUS,CRANE-AUS-07,Bulk Material,30,Operational,Berth 7,14,350,Bulk cargo handling
+SP-AUS,CRANE-AUS-08,Bulk Material,30,Operational,Berth 8,14,350,Bulk cargo handling
+SP-AUS,CRANE-AUS-09,Fuel Offload,20,Operational,Berth 9,24,600,Fuel pipeline crane
+SP-AUS,CRANE-AUS-10,General Purpose,25,Operational,Berth 10,18,400,General cargo
+SP-AUS,CRANE-AUS-11,General Purpose,25,Operational,Berth 11,18,400,General cargo
+SP-AUS,CRANE-AUS-12,General Purpose,20,Operational,Berth 12,16,400,General cargo
+SP-AUSTERE,CRANE-AUST-01,Portable Mobile,10,Operational,Berth 1,12,300,Portable crane
+SP-AUSTERE,CRANE-AUST-02,Portable Mobile,10,Operational,Berth 1,12,300,Portable crane
+
+# TABLE: seaport_personnel
+node_id,personnel_category,personnel_count,qualification_level,shift_capacity,notes
+SP-GUAM,Crane Operator,24,Expert,8,3 shifts per day
+SP-GUAM,Crane Operator Trainee,6,Basic,2,Training personnel
+SP-GUAM,Stevedore Foreman,8,Expert,3,Supervision
+SP-GUAM,Stevedore,120,Advanced,40,Container handling
+SP-GUAM,Forklift Operator,18,Advanced,6,Forklift operations
+SP-GUAM,Equipment Mechanic,12,Expert,4,Maintenance
+SP-GUAM,Security Personnel,20,Advanced,7,Port security
+SP-GUAM,Port Operations Manager,3,Expert,1,Management
+SP-GUAM,Logistics Coordinator,6,Advanced,2,Coordination
+SP-OKINAWA,Crane Operator,18,Expert,6,3 shifts per day
+SP-OKINAWA,Crane Operator Trainee,4,Basic,1,Training personnel
+SP-OKINAWA,Stevedore Foreman,6,Expert,2,Supervision
+SP-OKINAWA,Stevedore,90,Advanced,30,Container handling
+SP-OKINAWA,Forklift Operator,12,Advanced,4,Forklift operations
+SP-OKINAWA,Equipment Mechanic,8,Expert,3,Maintenance
+SP-OKINAWA,Security Personnel,15,Advanced,5,Port security
+SP-OKINAWA,Port Operations Manager,2,Expert,1,Management
+SP-OKINAWA,Logistics Coordinator,4,Advanced,1,Coordination
+SP-PHIL,Crane Operator,12,Advanced,4,2-3 shifts per day
+SP-PHIL,Crane Operator Trainee,3,Basic,1,Training personnel
+SP-PHIL,Stevedore Foreman,4,Advanced,1,Supervision
+SP-PHIL,Stevedore,60,Basic,20,Container handling
+SP-PHIL,Forklift Operator,8,Advanced,3,Forklift operations
+SP-PHIL,Equipment Mechanic,6,Advanced,2,Maintenance
+SP-PHIL,Security Personnel,12,Basic,4,Port security
+SP-PHIL,Port Operations Manager,2,Advanced,1,Management
+SP-PHIL,Logistics Coordinator,3,Basic,1,Coordination
+SP-AUS,Crane Operator,36,Expert,12,3 shifts per day
+SP-AUS,Crane Operator Trainee,8,Basic,3,Training personnel
+SP-AUS,Stevedore Foreman,12,Expert,4,Supervision
+SP-AUS,Stevedore,180,Advanced,60,Container handling
+SP-AUS,Forklift Operator,24,Advanced,8,Forklift operations
+SP-AUS,Equipment Mechanic,16,Expert,6,Maintenance
+SP-AUS,Security Personnel,30,Advanced,10,Port security
+SP-AUS,Port Operations Manager,4,Expert,1,Management
+SP-AUS,Logistics Coordinator,8,Advanced,3,Coordination
+SP-AUSTERE,Crane Operator,4,Basic,2,2 shifts per day
+SP-AUSTERE,Stevedore,12,Basic,6,Manual handling
+SP-AUSTERE,Equipment Mechanic,2,Basic,1,Basic maintenance
+SP-AUSTERE,Security Personnel,4,Basic,2,Port security
+SP-AUSTERE,Port Operations Manager,1,Basic,1,Management
+
+# TABLE: seaport_wait_times
+node_id,ship_type,average_wait_hours_berth,average_unloading_hours,average_total_time_hours,queue_length_ships,notes
+SP-GUAM,Container Ship,2,18,20,0.5,Minimal wait times
+SP-GUAM,Bulk Carrier,1,24,25,0.3,Minimal wait times
+SP-GUAM,Fuel Tanker,0.5,12,12.5,0.2,Minimal wait times
+SP-OKINAWA,Container Ship,8,22,30,2.5,Crane availability constraint
+SP-OKINAWA,Bulk Carrier,6,28,34,1.8,Crane availability constraint
+SP-OKINAWA,Fuel Tanker,1,12,13,0.5,Minimal wait times
+SP-PHIL,Container Ship,12,28,40,4.2,Severe crane availability constraint
+SP-PHIL,Bulk Carrier,10,32,42,3.5,Severe crane availability constraint
+SP-PHIL,Fuel Tanker,2,14,16,1.2,Crane availability constraint
+SP-AUS,Container Ship,1,16,17,0.3,Minimal wait times
+SP-AUS,Bulk Carrier,0.5,22,22.5,0.2,Minimal wait times
+SP-AUS,Fuel Tanker,0.5,10,10.5,0.1,Minimal wait times
+SP-AUSTERE,Container Ship,24,36,60,1.5,Very limited capacity
+SP-AUSTERE,Bulk Carrier,18,24,42,1.2,Very limited capacity
+SP-AUSTERE,Fuel Tanker,6,8,14,0.8,Very limited capacity
+
+# TABLE: crane_equipment_costs
+crane_type,lift_capacity_tons,acquisition_cost_usd,installation_cost_usd,annual_maintenance_cost_usd,operating_cost_per_hour_usd,expected_lifespan_years,throughput_teu_per_hour,notes
+Container Gantry Post-Panamax,65,8500000,1200000,450000,280,25,35,Post-Panamax container handling
+Container Gantry Panamax,50,6500000,950000,350000,220,25,28,Panamax container handling
+Mobile Harbor,40,3200000,180000,180000,150,20,22,Mobile container handling
+Bulk Material,30,1800000,120000,95000,95,20,15,Bulk cargo handling
+Bulk Material,25,1500000,100000,80000,85,20,12,Bulk cargo handling
+Fuel Offload,20,850000,75000,45000,65,15,8,Fuel pipeline operations
+Fuel Offload,15,650000,60000,35000,55,15,6,Fuel pipeline operations
+General Purpose,25,1200000,80000,70000,75,18,10,General cargo handling
+General Purpose,20,950000,70000,60000,65,18,8,General cargo handling
+Portable Mobile,10,450000,25000,25000,40,12,5,Portable expeditionary crane
+
+# TABLE: seaport_crane_utilization
+node_id,crane_id,utilization_percent,average_wait_time_hours,throughput_efficiency,notes
+SP-GUAM,CRANE-GUAM-01,72,0.5,0.95,Well utilized
+SP-GUAM,CRANE-GUAM-02,68,0.3,0.95,Well utilized
+SP-GUAM,CRANE-GUAM-03,65,0.4,0.95,Well utilized
+SP-GUAM,CRANE-GUAM-04,75,0.6,0.93,Well utilized
+SP-GUAM,CRANE-GUAM-05,70,0.5,0.92,Well utilized
+SP-OKINAWA,CRANE-OKI-01,0,0,0.00,Maintenance - unavailable
+SP-OKINAWA,CRANE-OKI-02,92,8.5,0.85,Overutilized due to CRANE-OKI-01 down
+SP-OKINAWA,CRANE-OKI-03,88,7.2,0.87,Overutilized due to CRANE-OKI-01 down
+SP-OKINAWA,CRANE-OKI-04,82,5.8,0.88,High utilization
+SP-OKINAWA,CRANE-OKI-05,45,1.2,0.95,Specialized fuel operations
+SP-OKINAWA,CRANE-OKI-06,85,6.5,0.86,Overutilized
+SP-PHIL,CRANE-PHIL-01,95,12.5,0.78,Severely overutilized
+SP-PHIL,CRANE-PHIL-02,65,8.2,0.72,Intermittent operation
+SP-PHIL,CRANE-PHIL-03,88,10.5,0.80,Overutilized
+SP-PHIL,CRANE-PHIL-04,75,4.5,0.88,Specialized fuel operations
+SP-PHIL,CRANE-PHIL-05,0,0,0.00,Maintenance - awaiting parts
+SP-AUS,CRANE-AUS-01,68,0.4,0.95,Well utilized
+SP-AUS,CRANE-AUS-02,65,0.3,0.95,Well utilized
+SP-AUS,CRANE-AUS-03,70,0.5,0.95,Well utilized
+SP-AUS,CRANE-AUS-04,72,0.6,0.94,Well utilized
+SP-AUS,CRANE-AUS-05,68,0.4,0.95,Well utilized
+SP-AUS,CRANE-AUS-06,65,0.5,0.93,Well utilized
+SP-AUS,CRANE-AUS-07,58,0.3,0.95,Well utilized
+SP-AUS,CRANE-AUS-08,55,0.2,0.95,Well utilized
+SP-AUS,CRANE-AUS-09,42,0.8,0.96,Specialized fuel operations
+SP-AUS,CRANE-AUS-10,62,0.4,0.94,Well utilized
+SP-AUS,CRANE-AUS-11,60,0.3,0.94,Well utilized
+SP-AUS,CRANE-AUS-12,58,0.3,0.94,Well utilized
+SP-AUSTERE,CRANE-AUST-01,85,18.5,0.65,Very limited capacity
+SP-AUSTERE,CRANE-AUST-02,82,16.2,0.67,Very limited capacity
+
+# TABLE: airfield_infrastructure
+node_id,facility_id,facility_type,operational_status,specifications,notes
+AF-GUAM,TOWER-GUAM-01,Control Tower,Operational,Height 45m 360-degree visibility,Primary ATC tower
+AF-GUAM,TOWER-GUAM-02,Approach Control,Operational,Radar coverage 250nm,Approach radar facility
+AF-GUAM,RWY-GUAM-01,Runway Lighting,Operational,High intensity edge and centerline,Primary runway 06/24
+AF-GUAM,RWY-GUAM-02,Runway Lighting,Operational,High intensity edge and centerline,Secondary runway 12/30
+AF-GUAM,NAV-GUAM-01,ILS,Operational,Category III precision approach,Instrument landing system
+AF-GUAM,NAV-GUAM-02,VOR,Operational,Range 200nm,VHF omnidirectional range
+AF-GUAM,NAV-GUAM-03,TACAN,Operational,Range 200nm,Tactical air navigation
+AF-GUAM,NAV-GUAM-04,NDB,Operational,Range 50nm,Non-directional beacon
+AF-GUAM,NAV-GUAM-05,ASR,Operational,Range 60nm,Airport surveillance radar
+AF-GUAM,NAV-GUAM-06,PAR,Operational,Range 20nm,Precision approach radar
+AF-GUAM,APRON-GUAM-01,Apron Lighting,Operational,Medium intensity,Terminal apron
+AF-GUAM,APRON-GUAM-02,Apron Lighting,Operational,Medium intensity,Cargo apron
+AF-GUAM,FUEL-GUAM-01,Fuel Storage,Operational,12000 m3 capacity,JP-5 storage
+AF-GUAM,FUEL-GUAM-02,Fuel Hydrant,Operational,Flow rate 2000 L/min,Fuel distribution system
+AF-OKINAWA,TOWER-OKI-01,Control Tower,Operational,Height 50m 360-degree visibility,Primary ATC tower
+AF-OKINAWA,TOWER-OKI-02,Approach Control,Operational,Radar coverage 250nm,Approach radar facility
+AF-OKINAWA,RWY-OKI-01,Runway Lighting,Operational,High intensity edge and centerline,Primary runway 05/23
+AF-OKINAWA,RWY-OKI-02,Runway Lighting,Operational,High intensity edge and centerline,Secondary runway 18/36
+AF-OKINAWA,NAV-OKI-01,ILS,Operational,Category III precision approach,Instrument landing system
+AF-OKINAWA,NAV-OKI-02,VOR,Operational,Range 200nm,VHF omnidirectional range
+AF-OKINAWA,NAV-OKI-03,TACAN,Operational,Range 200nm,Tactical air navigation
+AF-OKINAWA,NAV-OKI-04,NDB,Operational,Range 50nm,Non-directional beacon
+AF-OKINAWA,NAV-OKI-05,ASR,Operational,Range 60nm,Airport surveillance radar
+AF-OKINAWA,NAV-OKI-06,PAR,Operational,Range 20nm,Precision approach radar
+AF-OKINAWA,APRON-OKI-01,Apron Lighting,Operational,Medium intensity,Terminal apron
+AF-OKINAWA,APRON-OKI-02,Apron Lighting,Operational,Medium intensity,Cargo apron
+AF-OKINAWA,FUEL-OKI-01,Fuel Storage,Operational,15000 m3 capacity,JP-5 storage
+AF-OKINAWA,FUEL-OKI-02,Fuel Hydrant,Operational,Flow rate 2500 L/min,Fuel distribution system
+AF-PHIL,TOWER-PHIL-01,Control Tower,Operational,Height 35m 360-degree visibility,Primary ATC tower
+AF-PHIL,TOWER-PHIL-02,Approach Control,Operational,Radar coverage 120nm,Approach radar facility
+AF-PHIL,RWY-PHIL-01,Runway Lighting,Operational,Medium intensity edge and centerline,Primary runway 02/20
+AF-PHIL,NAV-PHIL-01,ILS,Operational,Category I precision approach,Instrument landing system
+AF-PHIL,NAV-PHIL-02,VOR,Operational,Range 120nm,VHF omnidirectional range
+AF-PHIL,NAV-PHIL-03,TACAN,Operational,Range 150nm,Tactical air navigation
+AF-PHIL,NAV-PHIL-04,NDB,Operational,Range 40nm,Non-directional beacon
+AF-PHIL,NAV-PHIL-05,ASR,Operational,Range 30nm,Airport surveillance radar
+AF-PHIL,APRON-PHIL-01,Apron Lighting,Operational,Low intensity,Terminal apron
+AF-PHIL,FUEL-PHIL-01,Fuel Storage,Operational,6000 m3 capacity,JP-5 storage
+AF-PHIL,FUEL-PHIL-02,Fuel Hydrant,Operational,Flow rate 900 L/min,Fuel distribution system
+AF-AUS,TOWER-AUS-01,Control Tower,Operational,Height 48m 360-degree visibility,Primary ATC tower
+AF-AUS,TOWER-AUS-02,Approach Control,Operational,Radar coverage 250nm,Approach radar facility
+AF-AUS,RWY-AUS-01,Runway Lighting,Operational,High intensity edge and centerline,Primary runway 11/29
+AF-AUS,RWY-AUS-02,Runway Lighting,Operational,High intensity edge and centerline,Secondary runway 18/36
+AF-AUS,NAV-AUS-01,ILS,Operational,Category III precision approach,Instrument landing system
+AF-AUS,NAV-AUS-02,VOR,Operational,Range 200nm,VHF omnidirectional range
+AF-AUS,NAV-AUS-03,TACAN,Operational,Range 200nm,Tactical air navigation
+AF-AUS,NAV-AUS-04,NDB,Operational,Range 50nm,Non-directional beacon
+AF-AUS,NAV-AUS-05,ASR,Operational,Range 60nm,Airport surveillance radar
+AF-AUS,NAV-AUS-06,PAR,Operational,Range 20nm,Precision approach radar
+AF-AUS,APRON-AUS-01,Apron Lighting,Operational,Medium intensity,Terminal apron
+AF-AUS,APRON-AUS-02,Apron Lighting,Operational,Medium intensity,Cargo apron
+AF-AUS,FUEL-AUS-01,Fuel Storage,Operational,10000 m3 capacity,JP-5 storage
+AF-AUS,FUEL-AUS-02,Fuel Hydrant,Operational,Flow rate 2000 L/min,Fuel distribution system
+AF-AUSTERE,TOWER-AUST-01,Control Tower,Operational,Height 15m 180-degree visibility,Portable tower
+AF-AUSTERE,RWY-AUST-01,Runway Lighting,Operational,Low intensity edge,Expeditionary runway
+AF-AUSTERE,NAV-AUST-01,TACAN,Operational,Range 100nm,Tactical air navigation
+AF-AUSTERE,NAV-AUST-02,NDB,Operational,Range 30nm,Non-directional beacon
+AF-AUSTERE,APRON-AUST-01,Apron Lighting,Operational,Low intensity,Expeditionary apron
+AF-AUSTERE,FUEL-AUST-01,Fuel Storage,Operational,400 m3 capacity,JP-5 storage
+AF-AUSTERE,FUEL-AUST-02,Fuel Truck,Operational,Flow rate 400 L/min,Portable fuel truck
+
+# TABLE: airfield_personnel
+node_id,personnel_category,personnel_count,qualification_level,shift_capacity,certification_level,notes
+AF-GUAM,Air Traffic Controller,30,Expert,10,Full Rating,3 shifts per day
+AF-GUAM,Approach Controller,16,Expert,6,Full Rating,Approach control
+AF-GUAM,Ground Controller,11,Expert,4,Full Rating,Ground control
+AF-GUAM,Radar Technician,6,Expert,2,Maintenance,Radar maintenance
+AF-GUAM,Airfield Lighting Technician,4,Advanced,2,Maintenance,Lighting maintenance
+AF-GUAM,Airfield Operations,12,Advanced,4,Operations,Airfield management
+AF-GUAM,Fuel Handler,20,Advanced,7,Operations,Fuel operations
+AF-GUAM,Cargo Handler,26,Advanced,9,Operations,Cargo operations
+AF-GUAM,Security Personnel,15,Advanced,5,Security,Airfield security
+AF-GUAM,Fire Rescue,18,Expert,6,Emergency,Crash fire rescue
+AF-OKINAWA,Air Traffic Controller,28,Expert,10,Full Rating,3 shifts per day
+AF-OKINAWA,Approach Controller,14,Expert,5,Full Rating,Approach control
+AF-OKINAWA,Ground Controller,10,Expert,4,Full Rating,Ground control
+AF-OKINAWA,Radar Technician,8,Expert,3,Maintenance,Radar maintenance
+AF-OKINAWA,Airfield Lighting Technician,5,Advanced,2,Maintenance,Lighting maintenance
+AF-OKINAWA,Airfield Operations,14,Advanced,5,Operations,Airfield management
+AF-OKINAWA,Fuel Handler,20,Advanced,7,Operations,Fuel operations
+AF-OKINAWA,Cargo Handler,24,Advanced,8,Operations,Cargo operations
+AF-OKINAWA,Security Personnel,18,Advanced,6,Security,Airfield security
+AF-OKINAWA,Fire Rescue,20,Expert,7,Emergency,Crash fire rescue
+AF-PHIL,Air Traffic Controller,12,Advanced,4,Full Rating,2 shifts per day
+AF-PHIL,Approach Controller,5,Advanced,2,Full Rating,Approach control
+AF-PHIL,Ground Controller,4,Advanced,1,Full Rating,Ground control
+AF-PHIL,Radar Technician,4,Advanced,2,Maintenance,Radar maintenance
+AF-PHIL,Airfield Lighting Technician,3,Basic,1,Maintenance,Lighting maintenance
+AF-PHIL,Airfield Operations,8,Advanced,3,Operations,Airfield management
+AF-PHIL,Fuel Handler,9,Advanced,3,Operations,Fuel operations
+AF-PHIL,Cargo Handler,10,Advanced,3,Operations,Cargo operations
+AF-PHIL,Security Personnel,10,Basic,3,Security,Airfield security
+AF-PHIL,Fire Rescue,12,Advanced,4,Emergency,Crash fire rescue
+AF-AUS,Air Traffic Controller,22,Expert,8,Full Rating,3 shifts per day
+AF-AUS,Approach Controller,11,Expert,4,Full Rating,Approach control
+AF-AUS,Ground Controller,8,Expert,3,Full Rating,Ground control
+AF-AUS,Radar Technician,6,Expert,2,Maintenance,Radar maintenance
+AF-AUS,Airfield Lighting Technician,4,Advanced,2,Maintenance,Lighting maintenance
+AF-AUS,Airfield Operations,11,Advanced,4,Operations,Airfield management
+AF-AUS,Fuel Handler,16,Advanced,6,Operations,Fuel operations
+AF-AUS,Cargo Handler,18,Advanced,6,Operations,Cargo operations
+AF-AUS,Security Personnel,14,Advanced,5,Security,Airfield security
+AF-AUS,Fire Rescue,16,Expert,6,Emergency,Crash fire rescue
+AF-AUSTERE,Air Traffic Controller,4,Basic,2,Basic Rating,2 shifts per day
+AF-AUSTERE,Ground Controller,2,Basic,1,Basic Rating,Ground control
+AF-AUSTERE,Airfield Operations,3,Basic,1,Operations,Airfield management
+AF-AUSTERE,Fuel Handler,4,Basic,2,Operations,Fuel operations
+AF-AUSTERE,Cargo Handler,6,Basic,2,Operations,Cargo operations
+AF-AUSTERE,Security Personnel,4,Basic,2,Security,Airfield security
+AF-AUSTERE,Fire Rescue,6,Basic,2,Emergency,Basic fire rescue
+
+# TABLE: interdiction_probability
+node_id,node_type,p_kinetic,p_subsurface,p_cyber,p_airspace,expected_impact
+SP-GUAM,seaport,0.15,0.08,0.25,0.12,high
+SP-OKINAWA,seaport,0.22,0.12,0.30,0.18,high
+SP-PHIL,seaport,0.18,0.10,0.28,0.15,medium
+SP-AUS,seaport,0.08,0.05,0.15,0.06,low
+SP-AUSTERE,seaport,0.05,0.03,0.10,0.04,very_high
+AF-GUAM,airfield,0.18,0.06,0.28,0.20,high
+AF-OKINAWA,airfield,0.25,0.08,0.32,0.25,high
+AF-PHIL,airfield,0.20,0.07,0.30,0.22,medium
+AF-AUS,airfield,0.10,0.04,0.18,0.10,low
+AF-AUSTERE,airfield,0.06,0.02,0.12,0.08,very_high
+
+# TABLE: interdiction_severity_mapping
+severity,throughput_multiplier,typical_duration_days,description
+nuisance,0.85,1,Minor disruption, reduced efficiency
+moderate,0.55,3,Significant degradation, partial operations
+severe,0.25,7,Major damage, limited operations only
+catastrophic,0.05,14,Complete shutdown, requires major repair
+
+# TABLE: tempo_multipliers
+tempo,fuel_multiplier,ammo_multiplier,spares_multiplier,water_multiplier,food_multiplier,medical_multiplier
+PRESENCE,1.0,1.0,1.0,1.0,1.0,1.0
+DEFENSIVE,1.6,4.8,2.4,1.1,1.05,2.0
+OFFENSIVE,2.8,11.2,5.6,1.11,1.18,3.2
+
+# TABLE: tempo_timeline_14_day
+day,planned_tempo,notes
+1,PRESENCE,Initial presence operations
+2,PRESENCE,Presence operations
+3,DEFENSIVE,Transition to defensive posture
+4,DEFENSIVE,Defensive operations
+5,DEFENSIVE,Defensive operations
+6,OFFENSIVE,Transition to offensive operations
+7,OFFENSIVE,Offensive operations
+8,OFFENSIVE,Offensive operations
+9,OFFENSIVE,Offensive operations
+10,DEFENSIVE,Transition to defensive posture
+11,DEFENSIVE,Defensive operations
+12,DEFENSIVE,Defensive operations
+13,PRESENCE,Transition to presence operations
+14,PRESENCE,Presence operations
+
+# TABLE: aggregate_meu_daily_totals
+tempo,total_fuel_m3_day,total_ammo_tons_day,total_spares_tons_day,total_water_m3_day,total_food_tons_day,total_medical_kg_day
+PRESENCE,348,4.3,15.0,625,33.0,95
+DEFENSIVE,569,21.1,30.2,685,35.8,180
+OFFENSIVE,850,51.0,56.0,727,38.5,285
+
+# TABLE: daily_consumption_time_series
+day,planned_tempo,unit_id,fuel_m3_day,ammo_tons_day,spares_tons_day,water_m3_day,food_tons_day,medical_kg_day
+1,PRESENCE,MEU-CE,8,0.2,0.5,45,2.5,15
+1,PRESENCE,BLT-1/5,25,2.5,1.5,180,8.5,35
+1,PRESENCE,ACE-31,180,1.5,8.0,120,6.0,20
+1,PRESENCE,LCE-15,15,0.1,2.0,80,4.0,10
+1,PRESENCE,ARG-1,120,0.0,3.0,200,12.0,15
+1,PRESENCE,AGGREGATE,348,4.3,15.0,625,33.0,95
+2,PRESENCE,MEU-CE,8,0.2,0.5,45,2.5,15
+2,PRESENCE,BLT-1/5,25,2.5,1.5,180,8.5,35
+2,PRESENCE,ACE-31,180,1.5,8.0,120,6.0,20
+2,PRESENCE,LCE-15,15,0.1,2.0,80,4.0,10
+2,PRESENCE,ARG-1,120,0.0,3.0,200,12.0,15
+2,PRESENCE,AGGREGATE,348,4.3,15.0,625,33.0,95
+3,DEFENSIVE,MEU-CE,12,0.8,1.2,50,2.8,25
+3,DEFENSIVE,BLT-1/5,35,12.0,3.5,195,9.0,65
+3,DEFENSIVE,ACE-31,320,8.0,15.0,130,6.5,45
+3,DEFENSIVE,LCE-15,22,0.3,4.5,90,4.5,20
+3,DEFENSIVE,ARG-1,180,0.0,6.0,220,13.0,25
+3,DEFENSIVE,AGGREGATE,569,21.1,30.2,685,35.8,180
+4,DEFENSIVE,MEU-CE,12,0.8,1.2,50,2.8,25
+4,DEFENSIVE,BLT-1/5,35,12.0,3.5,195,9.0,65
+4,DEFENSIVE,ACE-31,320,8.0,15.0,130,6.5,45
+4,DEFENSIVE,LCE-15,22,0.3,4.5,90,4.5,20
+4,DEFENSIVE,ARG-1,180,0.0,6.0,220,13.0,25
+4,DEFENSIVE,AGGREGATE,569,21.1,30.2,685,35.8,180
+5,DEFENSIVE,MEU-CE,12,0.8,1.2,50,2.8,25
+5,DEFENSIVE,BLT-1/5,35,12.0,3.5,195,9.0,65
+5,DEFENSIVE,ACE-31,320,8.0,15.0,130,6.5,45
+5,DEFENSIVE,LCE-15,22,0.3,4.5,90,4.5,20
+5,DEFENSIVE,ARG-1,180,0.0,6.0,220,13.0,25
+5,DEFENSIVE,AGGREGATE,569,21.1,30.2,685,35.8,180
+6,OFFENSIVE,MEU-CE,15,1.5,2.0,52,3.0,40
+6,OFFENSIVE,BLT-1/5,45,28.0,6.0,200,9.5,95
+6,OFFENSIVE,ACE-31,520,22.0,28.0,140,7.0,75
+6,OFFENSIVE,LCE-15,30,0.5,8.0,95,5.0,35
+6,OFFENSIVE,ARG-1,240,0.0,12.0,240,14.0,40
+6,OFFENSIVE,AGGREGATE,850,51.0,56.0,727,38.5,285
+7,OFFENSIVE,MEU-CE,15,1.5,2.0,52,3.0,40
+7,OFFENSIVE,BLT-1/5,45,28.0,6.0,200,9.5,95
+7,OFFENSIVE,ACE-31,520,22.0,28.0,140,7.0,75
+7,OFFENSIVE,LCE-15,30,0.5,8.0,95,5.0,35
+7,OFFENSIVE,ARG-1,240,0.0,12.0,240,14.0,40
+7,OFFENSIVE,AGGREGATE,850,51.0,56.0,727,38.5,285
+8,OFFENSIVE,MEU-CE,15,1.5,2.0,52,3.0,40
+8,OFFENSIVE,BLT-1/5,45,28.0,6.0,200,9.5,95
+8,OFFENSIVE,ACE-31,520,22.0,28.0,140,7.0,75
+8,OFFENSIVE,LCE-15,30,0.5,8.0,95,5.0,35
+8,OFFENSIVE,ARG-1,240,0.0,12.0,240,14.0,40
+8,OFFENSIVE,AGGREGATE,850,51.0,56.0,727,38.5,285
+9,OFFENSIVE,MEU-CE,15,1.5,2.0,52,3.0,40
+9,OFFENSIVE,BLT-1/5,45,28.0,6.0,200,9.5,95
+9,OFFENSIVE,ACE-31,520,22.0,28.0,140,7.0,75
+9,OFFENSIVE,LCE-15,30,0.5,8.0,95,5.0,35
+9,OFFENSIVE,ARG-1,240,0.0,12.0,240,14.0,40
+9,OFFENSIVE,AGGREGATE,850,51.0,56.0,727,38.5,285
+10,DEFENSIVE,MEU-CE,12,0.8,1.2,50,2.8,25
+10,DEFENSIVE,BLT-1/5,35,12.0,3.5,195,9.0,65
+10,DEFENSIVE,ACE-31,320,8.0,15.0,130,6.5,45
+10,DEFENSIVE,LCE-15,22,0.3,4.5,90,4.5,20
+10,DEFENSIVE,ARG-1,180,0.0,6.0,220,13.0,25
+10,DEFENSIVE,AGGREGATE,569,21.1,30.2,685,35.8,180
+11,DEFENSIVE,MEU-CE,12,0.8,1.2,50,2.8,25
+11,DEFENSIVE,BLT-1/5,35,12.0,3.5,195,9.0,65
+11,DEFENSIVE,ACE-31,320,8.0,15.0,130,6.5,45
+11,DEFENSIVE,LCE-15,22,0.3,4.5,90,4.5,20
+11,DEFENSIVE,ARG-1,180,0.0,6.0,220,13.0,25
+11,DEFENSIVE,AGGREGATE,569,21.1,30.2,685,35.8,180
+12,DEFENSIVE,MEU-CE,12,0.8,1.2,50,2.8,25
+12,DEFENSIVE,BLT-1/5,35,12.0,3.5,195,9.0,65
+12,DEFENSIVE,ACE-31,320,8.0,15.0,130,6.5,45
+12,DEFENSIVE,LCE-15,22,0.3,4.5,90,4.5,20
+12,DEFENSIVE,ARG-1,180,0.0,6.0,220,13.0,25
+12,DEFENSIVE,AGGREGATE,569,21.1,30.2,685,35.8,180
+13,PRESENCE,MEU-CE,8,0.2,0.5,45,2.5,15
+13,PRESENCE,BLT-1/5,25,2.5,1.5,180,8.5,35
+13,PRESENCE,ACE-31,180,1.5,8.0,120,6.0,20
+13,PRESENCE,LCE-15,15,0.1,2.0,80,4.0,10
+13,PRESENCE,ARG-1,120,0.0,3.0,200,12.0,15
+13,PRESENCE,AGGREGATE,348,4.3,15.0,625,33.0,95
+14,PRESENCE,MEU-CE,8,0.2,0.5,45,2.5,15
+14,PRESENCE,BLT-1/5,25,2.5,1.5,180,8.5,35
+14,PRESENCE,ACE-31,180,1.5,8.0,120,6.0,20
+14,PRESENCE,LCE-15,15,0.1,2.0,80,4.0,10
+14,PRESENCE,ARG-1,120,0.0,3.0,200,12.0,15
+14,PRESENCE,AGGREGATE,348,4.3,15.0,625,33.0,95
+
+# TABLE: daily_ammunition_time_series
+day,planned_tempo,unit_id,small_arms_tons_day,mortar_tons_day,atgm_tons_day,shorad_missile_tons_day,aviation_munitions_tons_day
+1,PRESENCE,MEU-CE,0.1,0.0,0.0,0.1,0.0
+1,PRESENCE,BLT-1/5,1.2,0.8,0.3,0.2,0.0
+1,PRESENCE,ACE-31,0.0,0.0,0.0,0.0,1.5
+1,PRESENCE,LCE-15,0.05,0.0,0.0,0.05,0.0
+1,PRESENCE,ARG-1,0.0,0.0,0.0,0.0,0.0
+2,PRESENCE,MEU-CE,0.1,0.0,0.0,0.1,0.0
+2,PRESENCE,BLT-1/5,1.2,0.8,0.3,0.2,0.0
+2,PRESENCE,ACE-31,0.0,0.0,0.0,0.0,1.5
+2,PRESENCE,LCE-15,0.05,0.0,0.0,0.05,0.0
+2,PRESENCE,ARG-1,0.0,0.0,0.0,0.0,0.0
+3,DEFENSIVE,MEU-CE,0.3,0.0,0.0,0.5,0.0
+3,DEFENSIVE,BLT-1/5,5.5,4.2,1.8,0.5,0.0
+3,DEFENSIVE,ACE-31,0.0,0.0,0.0,0.0,8.0
+3,DEFENSIVE,LCE-15,0.15,0.0,0.0,0.15,0.0
+3,DEFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+4,DEFENSIVE,MEU-CE,0.3,0.0,0.0,0.5,0.0
+4,DEFENSIVE,BLT-1/5,5.5,4.2,1.8,0.5,0.0
+4,DEFENSIVE,ACE-31,0.0,0.0,0.0,0.0,8.0
+4,DEFENSIVE,LCE-15,0.15,0.0,0.0,0.15,0.0
+4,DEFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+5,DEFENSIVE,MEU-CE,0.3,0.0,0.0,0.5,0.0
+5,DEFENSIVE,BLT-1/5,5.5,4.2,1.8,0.5,0.0
+5,DEFENSIVE,ACE-31,0.0,0.0,0.0,0.0,8.0
+5,DEFENSIVE,LCE-15,0.15,0.0,0.0,0.15,0.0
+5,DEFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+6,OFFENSIVE,MEU-CE,0.6,0.0,0.0,0.9,0.0
+6,OFFENSIVE,BLT-1/5,12.5,10.0,4.5,1.0,0.0
+6,OFFENSIVE,ACE-31,0.0,0.0,0.0,0.0,22.0
+6,OFFENSIVE,LCE-15,0.25,0.0,0.0,0.25,0.0
+6,OFFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+7,OFFENSIVE,MEU-CE,0.6,0.0,0.0,0.9,0.0
+7,OFFENSIVE,BLT-1/5,12.5,10.0,4.5,1.0,0.0
+7,OFFENSIVE,ACE-31,0.0,0.0,0.0,0.0,22.0
+7,OFFENSIVE,LCE-15,0.25,0.0,0.0,0.25,0.0
+7,OFFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+8,OFFENSIVE,MEU-CE,0.6,0.0,0.0,0.9,0.0
+8,OFFENSIVE,BLT-1/5,12.5,10.0,4.5,1.0,0.0
+8,OFFENSIVE,ACE-31,0.0,0.0,0.0,0.0,22.0
+8,OFFENSIVE,LCE-15,0.25,0.0,0.0,0.25,0.0
+8,OFFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+9,OFFENSIVE,MEU-CE,0.6,0.0,0.0,0.9,0.0
+9,OFFENSIVE,BLT-1/5,12.5,10.0,4.5,1.0,0.0
+9,OFFENSIVE,ACE-31,0.0,0.0,0.0,0.0,22.0
+9,OFFENSIVE,LCE-15,0.25,0.0,0.0,0.25,0.0
+9,OFFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+10,DEFENSIVE,MEU-CE,0.3,0.0,0.0,0.5,0.0
+10,DEFENSIVE,BLT-1/5,5.5,4.2,1.8,0.5,0.0
+10,DEFENSIVE,ACE-31,0.0,0.0,0.0,0.0,8.0
+10,DEFENSIVE,LCE-15,0.15,0.0,0.0,0.15,0.0
+10,DEFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+11,DEFENSIVE,MEU-CE,0.3,0.0,0.0,0.5,0.0
+11,DEFENSIVE,BLT-1/5,5.5,4.2,1.8,0.5,0.0
+11,DEFENSIVE,ACE-31,0.0,0.0,0.0,0.0,8.0
+11,DEFENSIVE,LCE-15,0.15,0.0,0.0,0.15,0.0
+11,DEFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+12,DEFENSIVE,MEU-CE,0.3,0.0,0.0,0.5,0.0
+12,DEFENSIVE,BLT-1/5,5.5,4.2,1.8,0.5,0.0
+12,DEFENSIVE,ACE-31,0.0,0.0,0.0,0.0,8.0
+12,DEFENSIVE,LCE-15,0.15,0.0,0.0,0.15,0.0
+12,DEFENSIVE,ARG-1,0.0,0.0,0.0,0.0,0.0
+13,PRESENCE,MEU-CE,0.1,0.0,0.0,0.1,0.0
+13,PRESENCE,BLT-1/5,1.2,0.8,0.3,0.2,0.0
+13,PRESENCE,ACE-31,0.0,0.0,0.0,0.0,1.5
+13,PRESENCE,LCE-15,0.05,0.0,0.0,0.05,0.0
+13,PRESENCE,ARG-1,0.0,0.0,0.0,0.0,0.0
+14,PRESENCE,MEU-CE,0.1,0.0,0.0,0.1,0.0
+14,PRESENCE,BLT-1/5,1.2,0.8,0.3,0.2,0.0
+14,PRESENCE,ACE-31,0.0,0.0,0.0,0.0,1.5
+14,PRESENCE,LCE-15,0.05,0.0,0.0,0.05,0.0
+14,PRESENCE,ARG-1,0.0,0.0,0.0,0.0,0.0
+
+# TABLE: daily_aggregate_summary
+day,planned_tempo,total_fuel_m3,total_ammo_tons,total_spares_tons,total_water_m3,total_food_tons,total_medical_kg,cumulative_fuel_m3,cumulative_ammo_tons,cumulative_spares_tons
+1,PRESENCE,348,4.3,15.0,625,33.0,95,348,4.3,15.0
+2,PRESENCE,348,4.3,15.0,625,33.0,95,696,8.6,30.0
+3,DEFENSIVE,569,21.1,30.2,685,35.8,180,1265,29.7,60.2
+4,DEFENSIVE,569,21.1,30.2,685,35.8,180,1834,50.8,90.4
+5,DEFENSIVE,569,21.1,30.2,685,35.8,180,2403,71.9,120.6
+6,OFFENSIVE,850,51.0,56.0,727,38.5,285,3253,122.9,176.6
+7,OFFENSIVE,850,51.0,56.0,727,38.5,285,4103,173.9,232.6
+8,OFFENSIVE,850,51.0,56.0,727,38.5,285,4953,224.9,288.6
+9,OFFENSIVE,850,51.0,56.0,727,38.5,285,5803,275.9,344.6
+10,DEFENSIVE,569,21.1,30.2,685,35.8,180,6372,297.0,374.8
+11,DEFENSIVE,569,21.1,30.2,685,35.8,180,6941,318.1,405.0
+12,DEFENSIVE,569,21.1,30.2,685,35.8,180,7510,339.2,435.2
+13,PRESENCE,348,4.3,15.0,625,33.0,95,7858,343.5,450.2
+14,PRESENCE,348,4.3,15.0,625,33.0,95,8206,347.8,465.2
+
+# TABLE: unit_structure_detailed
+unit_id,parent_unit_id,sub_unit_name,echelon,personnel,vehicles,weapons,notes
+BLT-HQ,BLT-1/5,Battalion Headquarters,BN,85,12,45,Command and control
+BLT-HQ-CO,BLT-HQ,Command Section,Section,15,2,8,CO XO S-1 S-2 S-3 S-4
+BLT-HQ-S1,BLT-HQ,Personnel Section,Section,12,1,4,Administrative support
+BLT-HQ-S2,BLT-HQ,Intelligence Section,Section,18,2,6,Intelligence operations
+BLT-HQ-S3,BLT-HQ,Operations Section,Section,25,4,15,Operations planning
+BLT-HQ-S4,BLT-HQ,Logistics Section,Section,15,3,12,Supply and maintenance
+A-CO,BLT-1/5,Alpha Company,Company,185,28,95,Infantry company
+A-CO-HQ,A-CO,Company Headquarters,Section,25,4,12,Command element
+A-CO-1PLT,A-CO,1st Platoon,Platoon,45,6,28,Infantry platoon
+A-CO-1PLT-1SQD,A-CO-1PLT,1st Squad,Squad,13,0,8,13-man rifle squad
+A-CO-1PLT-2SQD,A-CO-1PLT,2nd Squad,Squad,13,0,8,13-man rifle squad
+A-CO-1PLT-3SQD,A-CO-1PLT,3rd Squad,Squad,13,0,8,13-man rifle squad
+A-CO-1PLT-WPN,A-CO-1PLT,Weapons Squad,Squad,6,0,4,M240 machine gun team
+A-CO-2PLT,A-CO,2nd Platoon,Platoon,45,6,28,Infantry platoon
+A-CO-2PLT-1SQD,A-CO-2PLT,1st Squad,Squad,13,0,8,13-man rifle squad
+A-CO-2PLT-2SQD,A-CO-2PLT,2nd Squad,Squad,13,0,8,13-man rifle squad
+A-CO-2PLT-3SQD,A-CO-2PLT,3rd Squad,Squad,13,0,8,13-man rifle squad
+A-CO-2PLT-WPN,A-CO-2PLT,Weapons Squad,Squad,6,0,4,M240 machine gun team
+A-CO-3PLT,A-CO,3rd Platoon,Platoon,45,6,28,Infantry platoon
+A-CO-3PLT-1SQD,A-CO-3PLT,1st Squad,Squad,13,0,8,13-man rifle squad
+A-CO-3PLT-2SQD,A-CO-3PLT,2nd Squad,Squad,13,0,8,13-man rifle squad
+A-CO-3PLT-3SQD,A-CO-3PLT,3rd Squad,Squad,13,0,8,13-man rifle squad
+A-CO-3PLT-WPN,A-CO-3PLT,Weapons Squad,Squad,6,0,4,M240 machine gun team
+A-CO-WPN,A-CO,Weapons Platoon,Platoon,45,8,32,Heavy weapons platoon
+A-CO-WPN-AT,A-CO-WPN,Anti-Tank Section,Section,12,2,6,Javelin teams
+A-CO-WPN-MORT,A-CO-WPN,Mortar Section,Section,18,3,12,60mm mortars
+A-CO-WPN-MG,A-CO-WPN,Machine Gun Section,Section,15,3,14,M240B teams
+B-CO,BLT-1/5,Bravo Company,Company,185,28,95,Infantry company
+B-CO-HQ,B-CO,Company Headquarters,Section,25,4,12,Command element
+B-CO-1PLT,B-CO,1st Platoon,Platoon,45,6,28,Infantry platoon
+B-CO-2PLT,B-CO,2nd Platoon,Platoon,45,6,28,Infantry platoon
+B-CO-3PLT,B-CO,3rd Platoon,Platoon,45,6,28,Infantry platoon
+B-CO-WPN,B-CO,Weapons Platoon,Platoon,45,8,32,Heavy weapons platoon
+C-CO,BLT-1/5,Charlie Company,Company,185,28,95,Infantry company
+C-CO-HQ,C-CO,Company Headquarters,Section,25,4,12,Command element
+C-CO-1PLT,C-CO,1st Platoon,Platoon,45,6,28,Infantry platoon
+C-CO-2PLT,C-CO,2nd Platoon,Platoon,45,6,28,Infantry platoon
+C-CO-3PLT,C-CO,3rd Platoon,Platoon,45,6,28,Infantry platoon
+C-CO-WPN,C-CO,Weapons Platoon,Platoon,45,8,32,Heavy weapons platoon
+WPN-CO,BLT-1/5,Weapons Company,Company,165,35,120,Heavy weapons company
+WPN-CO-HQ,WPN-CO,Company Headquarters,Section,20,3,10,Command element
+WPN-CO-81MM,WPN-CO,81mm Mortar Platoon,Platoon,45,8,24,81mm mortars
+WPN-CO-TOW,WPN-CO,TOW Platoon,Platoon,50,12,30,TOW missile systems
+WPN-CO-HMG,WPN-CO,Heavy Machine Gun Platoon,Platoon,50,12,56,M2 .50 cal teams
+ACE-HMM-262,ACE-31,HMM-262,Squadron,420,26,0,12x MV-22B Osprey
+ACE-HMM-262-HQ,ACE-HMM-262,Squadron Headquarters,Section,35,2,0,Command element
+ACE-HMM-262-DET1,ACE-HMM-262,Detachment 1,Section,65,4,0,4x MV-22B
+ACE-HMM-262-DET2,ACE-HMM-262,Detachment 2,Section,65,4,0,4x MV-22B
+ACE-HMM-262-DET3,ACE-HMM-262,Detachment 3,Section,65,4,0,4x MV-22B
+ACE-HMM-262-MAINT,ACE-HMM-262,Maintenance Section,Section,190,12,0,Maintenance support
+ACE-HMH-465,ACE-31,HMH-465,Detachment,180,4,0,4x CH-53E Super Stallion
+ACE-HMH-465-HQ,ACE-HMH-465,Detachment Headquarters,Section,25,1,0,Command element
+ACE-HMH-465-FLT,ACE-HMH-465,Flight Section,Section,85,2,0,4x CH-53E
+ACE-HMH-465-MAINT,ACE-HMH-465,Maintenance Section,Section,70,1,0,Maintenance support
+ACE-HMLA-267,ACE-31,HMLA-267,Detachment,180,6,0,6x AH-1Z 4x UH-1Y
+ACE-HMLA-267-HQ,ACE-HMLA-267,Detachment Headquarters,Section,20,1,0,Command element
+ACE-HMLA-267-AH,ACE-HMLA-267,Attack Section,Section,75,3,0,6x AH-1Z Viper
+ACE-HMLA-267-UH,ACE-HMLA-267,Utility Section,Section,50,2,0,4x UH-1Y Venom
+ACE-HMLA-267-MAINT,ACE-HMLA-267,Maintenance Section,Section,35,0,0,Maintenance support
+ACE-MACS-24,ACE-31,MACS-24,Detachment,70,0,0,Air traffic control
+LCE-SUP,LCE-15,Supply Company,Company,180,25,8,Supply operations
+LCE-MAINT,LCE-15,Maintenance Company,Company,220,35,12,Vehicle and equipment maintenance
+LCE-MED,LCE-15,Medical Company,Company,120,15,4,Medical support
+LCE-ENG,LCE-15,Engineer Company,Company,80,20,15,Engineering support
+
+# TABLE: vehicle_inventory
+vehicle_id,unit_id,vehicle_type,make_model,fuel_type,fuel_capacity_liters,fuel_consumption_lph,payload_kg,range_km,mtbf_hours,maintenance_hours_per_100km,notes
+V001,BLT-1/5,Light Armored Vehicle,LAV-25,JP-8,200,25,6000,650,450,2.5,25mm cannon variant
+V002,BLT-1/5,Light Armored Vehicle,LAV-AT,JP-8,200,25,5000,650,450,2.5,TOW missile variant
+V003,BLT-1/5,Light Armored Vehicle,LAV-M,JP-8,200,25,5500,650,450,2.5,81mm mortar variant
+V004,BLT-1/5,Light Armored Vehicle,LAV-C2,JP-8,200,25,4000,650,450,2.5,Command and control
+V005,BLT-1/5,Light Armored Vehicle,LAV-R,JP-8,200,25,3000,650,450,2.5,Recovery variant
+V006,BLT-1/5,High Mobility Vehicle,HMMWV M1151,JP-8,95,12,1200,440,600,1.8,Up-armored cargo
+V007,BLT-1/5,High Mobility Vehicle,HMMWV M1165,JP-8,95,12,800,440,600,1.8,Command variant
+V008,BLT-1/5,High Mobility Vehicle,HMMWV M1152,JP-8,95,12,1500,440,600,1.8,Utility variant
+V009,BLT-1/5,Medium Tactical Vehicle,MTVR 7-Ton,JP-8,300,35,7000,480,800,2.2,Cargo truck
+V010,BLT-1/5,Medium Tactical Vehicle,MTVR 7-Ton,JP-8,300,35,7000,480,800,2.2,Cargo truck
+V011,BLT-1/5,Medium Tactical Vehicle,MTVR 7-Ton,JP-8,300,35,5000,480,800,2.2,Dump truck
+V012,BLT-1/5,Medium Tactical Vehicle,MTVR 7-Ton,JP-8,300,35,10000,480,800,2.2,Wrecker
+V013,BLT-1/5,Light Tactical Vehicle,LVSR 10-Ton,JP-8,400,45,10000,500,750,2.5,Heavy cargo
+V014,BLT-1/5,Light Tactical Vehicle,LVSR 10-Ton,JP-8,400,45,12000,500,750,2.5,Fuel tanker
+V015,BLT-1/5,Light Tactical Vehicle,LVSR 10-Ton,JP-8,400,45,8000,500,750,2.5,Water tanker
+V016,BLT-1/5,Amphibious Assault Vehicle,AAV-7A1,JP-8,680,85,3000,480,400,3.5,Personnel carrier
+V017,BLT-1/5,Amphibious Assault Vehicle,AAV-7A1,JP-8,680,85,3000,480,400,3.5,Personnel carrier
+V018,BLT-1/5,Amphibious Assault Vehicle,AAV-7A1,JP-8,680,85,3000,480,400,3.5,Personnel carrier
+V019,BLT-1/5,Amphibious Assault Vehicle,AAV-C7,JP-8,680,85,2000,480,400,3.5,Command variant
+V020,BLT-1/5,Amphibious Assault Vehicle,AAV-R7,JP-8,680,85,1500,480,400,3.5,Recovery variant
+V021,BLT-1/5,Combat Engineer Vehicle,CEV,JP-8,450,50,5000,420,500,3.0,Engineering support
+V022,BLT-1/5,Combat Engineer Vehicle,CEV,JP-8,450,50,5000,420,500,3.0,Engineering support
+V023,MEU-CE,High Mobility Vehicle,HMMWV M1165,JP-8,95,12,800,440,600,1.8,Command vehicle
+V024,MEU-CE,High Mobility Vehicle,HMMWV M1151,JP-8,95,12,1200,440,600,1.8,Staff vehicle
+V025,LCE-15,Medium Tactical Vehicle,MTVR 7-Ton,JP-8,300,35,7000,480,800,2.2,Supply truck
+V026,LCE-15,Medium Tactical Vehicle,MTVR 7-Ton,JP-8,300,35,7000,480,800,2.2,Supply truck
+V027,LCE-15,Light Tactical Vehicle,LVSR 10-Ton,JP-8,400,45,12000,500,750,2.5,Fuel tanker
+V028,LCE-15,Light Tactical Vehicle,LVSR 10-Ton,JP-8,400,45,8000,500,750,2.5,Water tanker
+V029,LCE-15,Medium Tactical Vehicle,MTVR 7-Ton,JP-8,300,35,5000,480,800,2.2,Maintenance truck
+V030,LCE-15,High Mobility Vehicle,HMMWV M1152,JP-8,95,12,1500,440,600,1.8,Utility vehicle
+
+# TABLE: aircraft_inventory
+aircraft_id,unit_id,aircraft_type,model,fuel_type,fuel_capacity_liters,fuel_burn_lph_cruise,fuel_burn_lph_combat,payload_kg,range_km,mtbf_hours,maintenance_hours_per_flight_hour,notes
+A001,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A002,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A003,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A004,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A005,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A006,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A007,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A008,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A009,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A010,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A011,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A012,ACE-HMM-262,MV-22B Osprey,MV-22B,JP-5,6800,1200,1800,9072,1627,350,4.5,Tiltrotor transport
+A013,ACE-HMH-465,CH-53E Super Stallion,CH-53E,JP-5,8200,1800,2400,13608,833,300,6.0,Heavy lift helicopter
+A014,ACE-HMH-465,CH-53E Super Stallion,CH-53E,JP-5,8200,1800,2400,13608,833,300,6.0,Heavy lift helicopter
+A015,ACE-HMH-465,CH-53E Super Stallion,CH-53E,JP-5,8200,1800,2400,13608,833,300,6.0,Heavy lift helicopter
+A016,ACE-HMH-465,CH-53E Super Stallion,CH-53E,JP-5,8200,1800,2400,13608,833,300,6.0,Heavy lift helicopter
+A017,ACE-HMLA-267,AH-1Z Viper,AH-1Z,JP-5,1100,450,750,0,685,250,3.5,Attack helicopter
+A018,ACE-HMLA-267,AH-1Z Viper,AH-1Z,JP-5,1100,450,750,0,685,250,3.5,Attack helicopter
+A019,ACE-HMLA-267,AH-1Z Viper,AH-1Z,JP-5,1100,450,750,0,685,250,3.5,Attack helicopter
+A020,ACE-HMLA-267,AH-1Z Viper,AH-1Z,JP-5,1100,450,750,0,685,250,3.5,Attack helicopter
+A021,ACE-HMLA-267,AH-1Z Viper,AH-1Z,JP-5,1100,450,750,0,685,250,3.5,Attack helicopter
+A022,ACE-HMLA-267,AH-1Z Viper,AH-1Z,JP-5,1100,450,750,0,685,250,3.5,Attack helicopter
+A023,ACE-HMLA-267,UH-1Y Venom,UH-1Y,JP-5,1100,380,600,1814,685,280,3.0,Utility helicopter
+A024,ACE-HMLA-267,UH-1Y Venom,UH-1Y,JP-5,1100,380,600,1814,685,280,3.0,Utility helicopter
+A025,ACE-HMLA-267,UH-1Y Venom,UH-1Y,JP-5,1100,380,600,1814,685,280,3.0,Utility helicopter
+A026,ACE-HMLA-267,UH-1Y Venom,UH-1Y,JP-5,1100,380,600,1814,685,280,3.0,Utility helicopter
+
+# TABLE: ship_inventory
+ship_id,unit_id,ship_type,ship_class,ship_name,displacement_tons,fuel_capacity_m3,cargo_capacity_m3,vehicle_capacity,aircraft_capacity,well_deck_capacity_lcu,range_nm,crew,notes
+S001,ARG-1,Amphibious Assault Ship,LHD-1,USS America,45000,8500,12000,65,20,2,9500,1061,Aviation focused variant
+S002,ARG-1,Amphibious Assault Ship,LHA-6,USS Tripoli,45000,8500,12000,65,20,2,9500,1061,Aviation focused variant
+S003,ARG-1,Amphibious Transport Dock,LPD-17,USS San Antonio,25000,3500,8000,14,2,2,9500,360,Transport and landing
+S004,ARG-1,Dock Landing Ship,LSD-41,USS Whidbey Island,16000,2500,5000,3,0,4,8000,340,Landing craft carrier
+S005,ARG-1,Amphibious Command Ship,LCC-19,USS Blue Ridge,19000,3000,2000,0,2,0,13000,850,Command and control
+
+# TABLE: weapon_systems
+weapon_id,unit_id,weapon_type,model,caliber_mm,ammo_type,rounds_per_weapon,weight_per_round_kg,effective_range_m,max_rate_fire_rpm,notes
+W001,BLT-1/5,Assault Rifle,M27 IAR,5.56,5.56x45mm,420,0.012,550,30,Infantry Automatic Rifle
+W002,BLT-1/5,Assault Rifle,M4A1,5.56,5.56x45mm,210,0.012,500,45,Standard issue rifle
+W003,BLT-1/5,Machine Gun,M240B,7.62,7.62x51mm,800,0.025,1100,100,Medium machine gun
+W004,BLT-1/5,Machine Gun,M2,12.7,12.7x99mm,100,0.046,1830,500,Heavy machine gun
+W005,BLT-1/5,Mortar,M224,60,60mm HE,60,1.7,3490,30,Light mortar
+W006,BLT-1/5,Mortar,M252,81,81mm HE,60,4.2,5700,15,Medium mortar
+W007,BLT-1/5,Anti-Tank,Javelin,127,ATGM,4,11.8,2500,1,Fire and forget ATGM
+W008,BLT-1/5,Anti-Tank,TOW-2A,152,ATGM,4,22.6,3750,1,Wire guided ATGM
+W009,BLT-1/5,Light Armored Vehicle,LAV-25,25,25mm AP/HE,630,0.4,2000,200,25mm chain gun
+W010,BLT-1/5,Surface to Air,Stinger,70,MANPADS,2,10.1,4800,1,Man portable air defense
+W011,ACE-HMLA-267,Attack Helicopter,AH-1Z,20,20mm,750,0.1,2000,750,3-barrel cannon
+W012,ACE-HMLA-267,Attack Helicopter,AH-1Z,70,70mm Hydra,76,6.2,6000,12,Rocket pod
+W013,ACE-HMLA-267,Attack Helicopter,AH-1Z,127,AGM-114 Hellfire,8,48.5,8000,1,Anti-tank missile
+W014,ACE-HMLA-267,Utility Helicopter,UH-1Y,7.62,7.62x51mm,2000,0.025,1000,600,M134 minigun
+W015,ACE-HMLA-267,Utility Helicopter,UH-1Y,70,70mm Hydra,76,6.2,6000,12,Rocket pod
+W016,ARG-1,Close In Weapon System,Phalanx CIWS,20,20mm,1550,0.1,1500,3000,Point defense
+W017,ARG-1,Surface to Air,RIM-116 RAM,127,Surface to air missile,21,73.5,9000,1,Rolling Airframe Missile
+W018,ARG-1,Surface to Air,RIM-162 ESSM,127,Surface to air missile,32,280,50000,1,Extended range SAM
+
+# TABLE: location_details
+location_id,location_name,location_type,latitude,longitude,elevation_m,timezone,utc_offset,port_depth_m,runway_length_m,runway_width_m,berth_count,storage_capacity_m3,fuel_storage_m3,water_capacity_m3,power_capacity_mw,notes
+LOC-GUAM,Apra Harbor Guam,Seaport,13.4443,144.7937,0,Pacific/Guam,+10,15,0,0,8,50000,25000,15000,50,Deep water port
+LOC-OKINAWA,White Beach Okinawa,Seaport,26.2124,127.6809,0,Asia/Tokyo,+9,12,0,0,6,35000,18000,10000,35,Forward operating base
+LOC-PHIL,Subic Bay Philippines,Seaport,14.7942,120.2439,0,Asia/Manila,+8,14,0,0,5,30000,15000,8000,30,Former US base
+LOC-AUS,Darwin Port Australia,Seaport,-12.4634,130.8456,0,Australia/Darwin,+9.5,18,0,0,12,80000,40000,25000,75,Major logistics hub
+LOC-AUSTERE,Unnamed Atoll,Seaport,10.0000,150.0000,2,Pacific/Guam,+10,5,0,0,1,500,200,100,0.5,Austere location
+LOC-AF-GUAM,Andersen AFB Guam,Airfield,13.5833,144.9300,162,Pacific/Guam,+10,0,3409,61,0,15000,12000,5000,45,Strategic airfield
+LOC-AF-OKINAWA,Kadena AB Okinawa,Airfield,26.3556,127.7672,45,Asia/Tokyo,+9,0,3658,61,0,20000,15000,6000,60,Strategic airfield
+LOC-AF-PHIL,Clark AB Philippines,Airfield,15.1864,120.5603,152,Asia/Manila,+8,0,3200,45,0,8000,6000,3000,25,Tactical airfield
+LOC-AF-AUS,Darwin IAP Australia,Airfield,-12.4147,130.8767,31,Australia/Darwin,+9.5,0,3353,45,0,12000,10000,4000,40,Strategic airfield
+LOC-AF-AUSTERE,Expeditionary Strip,Airfield,10.0100,150.0100,5,Pacific/Guam,+10,0,1200,30,0,200,150,50,0.1,Austere airfield
+
+# TABLE: location_distances
+origin_location_id,destination_location_id,distance_nm,distance_km,transit_time_hours_surface,transit_time_hours_air,transit_time_hours_air_heavy,notes
+LOC-GUAM,LOC-OKINAWA,1350,2500,72,3.5,5.0,Primary supply route
+LOC-GUAM,LOC-PHIL,1500,2780,80,4.0,5.5,Secondary supply route
+LOC-GUAM,LOC-AUS,1850,3430,100,5.0,7.0,Long range route
+LOC-GUAM,LOC-AUSTERE,850,1575,45,2.5,3.5,Operational area
+LOC-OKINAWA,LOC-PHIL,750,1390,42,2.0,3.0,Regional route
+LOC-OKINAWA,LOC-AUSTERE,500,926,28,1.5,2.0,Operational area
+LOC-PHIL,LOC-AUSTERE,600,1112,34,1.8,2.5,Operational area
+LOC-AUS,LOC-AUSTERE,1200,2224,65,3.5,5.0,Long range route
+LOC-AF-GUAM,LOC-AF-OKINAWA,1350,2500,0,3.5,5.0,Air route
+LOC-AF-GUAM,LOC-AF-PHIL,1500,2780,0,4.0,5.5,Air route
+LOC-AF-GUAM,LOC-AF-AUS,1850,3430,0,5.0,7.0,Air route
+LOC-AF-GUAM,LOC-AF-AUSTERE,850,1575,0,2.5,3.5,Air route
+LOC-AF-OKINAWA,LOC-AF-PHIL,750,1390,0,2.0,3.0,Air route
+LOC-AF-OKINAWA,LOC-AF-AUSTERE,500,926,0,1.5,2.0,Air route
+
+# TABLE: supply_routes
+route_id,origin_node_id,destination_node_id,route_type,primary_mode,distance_km,transit_time_hours,capacity_tons_day,reliability,threat_level,notes
+R001,SP-GUAM,SP-OKINAWA,Sea,Surface,2500,72,5000,0.88,medium,Container ship route
+R002,SP-GUAM,SP-PHIL,Sea,Surface,2780,80,4000,0.82,medium,Container ship route
+R003,SP-GUAM,SP-AUS,Sea,Surface,3430,100,6000,0.92,low,Long range route
+R004,SP-GUAM,SP-AUSTERE,Sea,Surface,1575,45,500,0.65,high,Operational area
+R005,SP-OKINAWA,SP-AUSTERE,Sea,Surface,926,28,800,0.70,high,Operational area
+R006,AF-GUAM,AF-OKINAWA,Air,Air,2500,3.5,200,0.85,medium,Strategic airlift
+R007,AF-GUAM,AF-PHIL,Air,Air,2780,4.0,150,0.78,medium,Tactical airlift
+R008,AF-GUAM,AF-AUSTERE,Air,Air,1575,2.5,80,0.60,high,Operational airlift
+R009,AF-OKINAWA,AF-AUSTERE,Air,Air,926,1.5,100,0.65,high,Operational airlift
+R010,SP-AUS,SP-AUSTERE,Sea,Surface,2224,65,1000,0.75,medium,Long range route
+
+# TABLE: maintenance_schedules
+equipment_type,maintenance_type,frequency_hours,frequency_days,maintenance_hours,parts_cost_usd,specialty_required,notes
+MV-22B,Post Flight,0,0,0.5,0,Airframe,After each flight
+MV-22B,Phase Inspection,25,1,4,500,Airframe,Every 25 flight hours
+MV-22B,Intermediate,200,8,24,5000,Airframe,Every 200 flight hours
+MV-22B,Depot,1200,50,480,50000,Depot,Every 1200 flight hours
+CH-53E,Post Flight,0,0,0.5,0,Airframe,After each flight
+CH-53E,Phase Inspection,25,1,6,800,Airframe,Every 25 flight hours
+CH-53E,Intermediate,200,8,32,8000,Airframe,Every 200 flight hours
+CH-53E,Depot,1200,50,600,75000,Depot,Every 1200 flight hours
+AH-1Z,Post Flight,0,0,0.5,0,Airframe,After each flight
+AH-1Z,Phase Inspection,25,1,3,600,Airframe,Every 25 flight hours
+AH-1Z,Intermediate,200,8,20,6000,Airframe,Every 200 flight hours
+AH-1Z,Depot,1200,50,400,60000,Depot,Every 1200 flight hours
+UH-1Y,Post Flight,0,0,0.5,0,Airframe,After each flight
+UH-1Y,Phase Inspection,25,1,3,500,Airframe,Every 25 flight hours
+UH-1Y,Intermediate,200,8,18,5000,Airframe,Every 200 flight hours
+UH-1Y,Depot,1200,50,350,50000,Depot,Every 1200 flight hours
+LAV-25,Preventive,500,21,8,1200,Vehicle,Every 500 km
+LAV-25,Intermediate,5000,210,40,8000,Vehicle,Every 5000 km
+LAV-25,Depot,25000,1050,200,50000,Depot,Every 25000 km
+HMMWV,Preventive,500,21,4,600,Vehicle,Every 500 km
+HMMWV,Intermediate,5000,210,24,4000,Vehicle,Every 5000 km
+HMMWV,Depot,25000,1050,120,30000,Depot,Every 25000 km
+MTVR,Preventive,500,21,6,800,Vehicle,Every 500 km
+MTVR,Intermediate,5000,210,32,6000,Vehicle,Every 5000 km
+MTVR,Depot,25000,1050,160,40000,Depot,Every 25000 km
+AAV-7A1,Preventive,500,21,12,1500,Vehicle,Every 500 km
+AAV-7A1,Intermediate,5000,210,60,12000,Vehicle,Every 5000 km
+AAV-7A1,Depot,25000,1050,300,80000,Depot,Every 25000 km
+
+# TABLE: personnel_breakdown
+unit_id,mos_code,mos_name,rank_category,personnel_count,specialty_level,notes
+MEU-CE,0302,Infantry Officer,Officer,12,Expert,Command and staff
+MEU-CE,0306,Infantry Officer,Officer,8,Advanced,Operations staff
+MEU-CE,0203,Intelligence Officer,Officer,15,Expert,Intelligence analysis
+MEU-CE,0402,Logistics Officer,Officer,10,Expert,Supply and logistics
+MEU-CE,0602,Communications Officer,Officer,12,Advanced,Communications
+MEU-CE,0802,Field Artillery Officer,Officer,6,Advanced,Fire support
+MEU-CE,1302,Combat Engineer Officer,Officer,4,Advanced,Engineering
+MEU-CE,1802,Tank Officer,Officer,3,Advanced,Vehicle operations
+MEU-CE,7208,Low Altitude Air Defense,Enlisted,25,Advanced,Air defense
+MEU-CE,0311,Rifleman,Enlisted,120,Basic,Security force
+MEU-CE,0331,Machine Gunner,Enlisted,15,Advanced,Heavy weapons
+MEU-CE,0621,Field Radio Operator,Enlisted,45,Advanced,Communications
+MEU-CE,0627,SATCOM Operator,Enlisted,12,Expert,Satellite communications
+MEU-CE,0811,Field Artillery Cannoneer,Enlisted,8,Advanced,Fire support
+MEU-CE,1371,Combat Engineer,Enlisted,20,Advanced,Engineering
+MEU-CE,2111,Small Arms Repairer,Enlisted,8,Expert,Weapons maintenance
+MEU-CE,2141,Assault Amphibious Vehicle Repairer,Enlisted,12,Expert,Vehicle maintenance
+MEU-CE,3521,Automotive Organizational Mechanic,Enlisted,25,Advanced,Vehicle maintenance
+MEU-CE,5711,Nuclear Biological Chemical Defense,Enlisted,10,Advanced,CBRN defense
+BLT-1/5,0302,Infantry Officer,Officer,45,Expert,Company and platoon commanders
+BLT-1/5,0303,Infantry Officer,Officer,25,Advanced,Platoon leaders
+BLT-1/5,0311,Rifleman,Enlisted,450,Basic,Primary MOS
+BLT-1/5,0313,Light Armored Vehicle Crewman,Enlisted,85,Advanced,LAV operations
+BLT-1/5,0331,Machine Gunner,Enlisted,120,Advanced,Heavy weapons
+BLT-1/5,0351,Infantry Assaultman,Enlisted,45,Advanced,Assault weapons
+BLT-1/5,0352,Anti-Tank Missileman,Enlisted,60,Advanced,ATGM operations
+BLT-1/5,0811,Field Artillery Cannoneer,Enlisted,85,Advanced,Mortar operations
+BLT-1/5,0861,Fire Support Man,Enlisted,25,Advanced,Fire support coordination
+BLT-1/5,1833,Assault Amphibious Vehicle Crewman,Enlisted,65,Advanced,AAV operations
+BLT-1/5,2111,Small Arms Repairer,Enlisted,25,Expert,Weapons maintenance
+BLT-1/5,2141,Assault Amphibious Vehicle Repairer,Enlisted,35,Expert,AAV maintenance
+BLT-1/5,3521,Automotive Organizational Mechanic,Enlisted,50,Advanced,Vehicle maintenance
+ACE-31,7508,MV-22B Pilot,Officer,24,Expert,Primary aircraft
+ACE-31,7563,CH-53E Pilot,Officer,12,Expert,Heavy lift pilot
+ACE-31,7565,AH-1Z Pilot,Officer,12,Expert,Attack pilot
+ACE-31,7567,UH-1Y Pilot,Officer,8,Expert,Utility pilot
+ACE-31,6172,MV-22B Crew Chief,Enlisted,48,Expert,Aircraft maintenance
+ACE-31,6174,CH-53E Crew Chief,Enlisted,24,Expert,Aircraft maintenance
+ACE-31,6176,AH-1Z Crew Chief,Enlisted,36,Expert,Aircraft maintenance
+ACE-31,6178,UH-1Y Crew Chief,Enlisted,16,Expert,Aircraft maintenance
+ACE-31,6113,Helicopter Mechanic,Enlisted,180,Expert,Airframe maintenance
+ACE-31,6114,Helicopter Power Plants Mechanic,Enlisted,120,Expert,Engine maintenance
+ACE-31,6152,Avionics Technician,Enlisted,85,Expert,Avionics maintenance
+ACE-31,6072,Air Traffic Controller,Enlisted,35,Advanced,ATC operations
+LCE-15,0402,Logistics Officer,Officer,15,Expert,Supply operations
+LCE-15,0430,Logistics Officer,Officer,8,Advanced,Supply planning
+LCE-15,3043,Supply Administration,Enlisted,85,Advanced,Supply management
+LCE-15,3051,Warehouse Clerk,Enlisted,45,Basic,Inventory management
+LCE-15,3521,Automotive Organizational Mechanic,Enlisted,95,Expert,Vehicle maintenance
+LCE-15,6113,Helicopter Mechanic,Enlisted,25,Advanced,Support maintenance
+LCE-15,2111,Small Arms Repairer,Enlisted,15,Advanced,Weapons maintenance
+LCE-15,8404,Field Mess Specialist,Enlisted,65,Advanced,Food service
+LCE-15,8411,Postal Clerk,Enlisted,8,Basic,Postal operations
+LCE-15,8421,Embarkation Specialist,Enlisted,25,Advanced,Embarkation
+
+# TABLE: medical_assets
+medical_asset_id,unit_id,asset_type,capacity_beds,personnel_count,equipment_level,evacuation_capacity_per_day,notes
+MED001,MEU-CE,Medical Station,0,8,Basic,0,First aid and triage
+MED002,BLT-1/5,Medical Platoon,0,45,Advanced,15,Field medical support
+MED003,BLT-1/5,Medical Platoon,0,45,Advanced,15,Field medical support
+MED004,ACE-31,Medical Detachment,0,12,Basic,5,Aviation medical support
+MED005,LCE-15,Medical Company,20,85,Advanced,30,Primary medical facility
+MED006,LCE-15,Surgical Team,0,25,Expert,10,Surgical capability
+MED007,ARG-1,Ship Medical,15,35,Advanced,20,Shipboard medical
+MED008,ARG-1,Ship Medical,15,35,Advanced,20,Shipboard medical
+MED009,ARG-1,Ship Medical,15,35,Advanced,20,Shipboard medical
+MED010,ARG-1,Ship Medical,15,35,Advanced,20,Shipboard medical
+MED011,ARG-1,Ship Medical,15,35,Advanced,20,Shipboard medical
+
+# TABLE: communication_assets
+comm_asset_id,unit_id,asset_type,model,range_km,data_rate_mbps,encryption_level,personnel_required,notes
+COMM001,MEU-CE,SATCOM Terminal,AN/TSC-154,Global,2.0,High,4,Satellite communications
+COMM002,MEU-CE,SATCOM Terminal,AN/TSC-154,Global,2.0,High,4,Satellite communications
+COMM003,MEU-CE,HF Radio,AN/PRC-150,3000,0.064,High,2,High frequency radio
+COMM004,MEU-CE,HF Radio,AN/PRC-150,3000,0.064,High,2,High frequency radio
+COMM005,MEU-CE,VHF Radio,AN/PRC-117G,50,0.256,High,1,Very high frequency
+COMM006,MEU-CE,VHF Radio,AN/PRC-117G,50,0.256,High,1,Very high frequency
+COMM007,BLT-1/5,HF Radio,AN/PRC-150,3000,0.064,High,2,High frequency radio
+COMM008,BLT-1/5,VHF Radio,AN/PRC-117G,50,0.256,High,1,Very high frequency
+COMM009,BLT-1/5,VHF Radio,AN/PRC-117G,50,0.256,High,1,Very high frequency
+COMM010,BLT-1/5,VHF Radio,AN/PRC-117G,50,0.256,High,1,Very high frequency
+COMM011,ACE-31,Airborne Radio,AN/ARC-210,200,0.512,High,0,Airborne communications
+COMM012,ACE-31,Airborne Radio,AN/ARC-210,200,0.512,High,0,Airborne communications
+COMM013,LCE-15,HF Radio,AN/PRC-150,3000,0.064,High,2,High frequency radio
+COMM014,LCE-15,VHF Radio,AN/PRC-117G,50,0.256,High,1,Very high frequency
+COMM015,ARG-1,Ship SATCOM,AN/WSC-6,Global,10.0,High,6,Shipboard satellite
+COMM016,ARG-1,Ship SATCOM,AN/WSC-6,Global,10.0,High,6,Shipboard satellite
+COMM017,ARG-1,Ship HF,AN/URC-131,5000,0.128,High,4,Shipboard HF radio
+COMM018,ARG-1,Ship VHF,AN/URC-110,50,0.512,High,2,Shipboard VHF radio
+
+# TABLE: fuel_storage
+storage_id,location_id,storage_type,fuel_type,capacity_m3,current_level_m3,refill_rate_m3_day,notes
+FUEL001,LOC-GUAM,Above Ground,JP-5,25000,20000,500,Primary fuel storage
+FUEL002,LOC-GUAM,Above Ground,JP-8,15000,12000,300,Vehicle fuel storage
+FUEL003,LOC-OKINAWA,Above Ground,JP-5,18000,3500,0,Forward fuel storage - damaged tank reduced capacity after enemy strike
+FUEL004,LOC-OKINAWA,Above Ground,JP-8,10000,8000,200,Vehicle fuel storage
+FUEL005,LOC-PHIL,Above Ground,JP-5,15000,12000,350,Regional fuel storage
+FUEL006,LOC-PHIL,Above Ground,JP-8,8000,6000,150,Vehicle fuel storage
+FUEL007,LOC-AUS,Above Ground,JP-5,40000,35000,800,Major fuel hub
+FUEL008,LOC-AUS,Above Ground,JP-8,20000,18000,400,Vehicle fuel storage
+FUEL009,LOC-AUSTERE,Portable,JP-5,200,150,20,Austere fuel storage
+FUEL010,LOC-AUSTERE,Portable,JP-8,100,80,10,Vehicle fuel storage
+FUEL011,S001,Shipboard,JP-5,8500,7000,0,Ship fuel tanks
+FUEL012,S002,Shipboard,JP-5,8500,7500,0,Ship fuel tanks
+FUEL013,S003,Shipboard,JP-5,3500,3000,0,Ship fuel tanks
+FUEL014,S004,Shipboard,JP-5,2500,2200,0,Ship fuel tanks
+FUEL015,S005,Shipboard,JP-5,3000,2800,0,Ship fuel tanks
+
+# TABLE: ammunition_storage
+storage_id,location_id,storage_type,ammo_category,capacity_tons,current_level_tons,refill_rate_tons_day,security_level,notes
+AMMO001,LOC-GUAM,Magazine,Small Arms,500,450,25,High,Small arms ammunition
+AMMO002,LOC-GUAM,Magazine,Artillery,800,700,40,High,Artillery and mortar rounds
+AMMO003,LOC-GUAM,Magazine,Missiles,200,180,10,Very High,ATGM and SAM
+AMMO004,LOC-GUAM,Magazine,Aviation,600,550,30,High,Aviation munitions
+AMMO005,LOC-OKINAWA,Magazine,Small Arms,300,250,15,High,Small arms ammunition
+AMMO006,LOC-OKINAWA,Magazine,Artillery,500,450,25,High,Artillery and mortar rounds
+AMMO007,LOC-OKINAWA,Magazine,Missiles,150,130,8,Very High,ATGM and SAM
+AMMO008,LOC-OKINAWA,Magazine,Aviation,400,350,20,High,Aviation munitions
+AMMO009,LOC-PHIL,Magazine,Small Arms,200,180,10,High,Small arms ammunition
+AMMO010,LOC-PHIL,Magazine,Artillery,350,300,18,High,Artillery and mortar rounds
+AMMO011,LOC-PHIL,Magazine,Missiles,100,90,5,Very High,ATGM and SAM
+AMMO012,LOC-PHIL,Magazine,Aviation,250,220,12,High,Aviation munitions
+AMMO013,LOC-AUS,Magazine,Small Arms,800,750,40,High,Small arms ammunition
+AMMO014,LOC-AUS,Magazine,Artillery,1200,1100,60,High,Artillery and mortar rounds
+AMMO015,LOC-AUS,Magazine,Missiles,400,380,20,Very High,ATGM and SAM
+AMMO016,LOC-AUS,Magazine,Aviation,1000,950,50,High,Aviation munitions
+AMMO017,LOC-AUSTERE,Portable,Small Arms,20,15,2,Medium,Field storage
+AMMO018,LOC-AUSTERE,Portable,Artillery,30,25,3,Medium,Field storage
+AMMO019,LOC-AUSTERE,Portable,Missiles,10,8,1,High,Field storage
+AMMO020,LOC-AUSTERE,Portable,Aviation,15,12,1.5,Medium,Field storage
+
+# TABLE: water_production
+production_id,location_id,production_type,capacity_m3_day,current_output_m3_day,quality_level,power_required_kw,notes
+WATER001,LOC-GUAM,Desalination,5000,4800,Potable,2500,Reverse osmosis plant
+WATER002,LOC-OKINAWA,Desalination,3500,3300,Potable,1800,Reverse osmosis plant
+WATER003,LOC-PHIL,Desalination,2500,2300,Potable,1300,Reverse osmosis plant
+WATER004,LOC-AUS,Desalination,8000,7600,Potable,4000,Reverse osmosis plant
+WATER005,LOC-AUSTERE,Portable,50,45,Potable,25,Portable desalination unit
+WATER006,S001,Shipboard,800,750,Potable,400,Ship desalination
+WATER007,S002,Shipboard,800,750,Potable,400,Ship desalination
+WATER008,S003,Shipboard,500,480,Potable,250,Ship desalination
+WATER009,S004,Shipboard,400,380,Potable,200,Ship desalination
+WATER010,S005,Shipboard,450,430,Potable,225,Ship desalination
+
+# TABLE: range_data
+weapon_id,weapon_type,effective_range_m,max_range_m,engagement_time_seconds,reload_time_seconds,notes
+W001,M27 IAR,550,800,2,3,Infantry automatic rifle
+W002,M4A1,500,600,2,2,Standard rifle
+W003,M240B,1100,3725,1,8,Medium machine gun
+W004,M2,1830,6800,1,10,Heavy machine gun
+W005,M224,3490,3490,30,5,60mm mortar
+W006,M252,5700,5700,45,8,81mm mortar
+W007,Javelin,2500,4750,30,60,Fire and forget ATGM
+W008,TOW-2A,3750,4500,20,45,Wire guided ATGM
+W009,LAV-25,2000,2500,1,5,25mm chain gun
+W010,Stinger,4800,4800,5,30,MANPADS
+W011,AH-1Z 20mm,2000,2000,1,0,3-barrel cannon
+W012,AH-1Z 70mm,6000,6000,2,5,Rocket pod
+W013,AGM-114 Hellfire,8000,8000,15,10,Anti-tank missile
+W014,UH-1Y 7.62mm,1000,1000,1,0,M134 minigun
+W015,UH-1Y 70mm,6000,6000,2,5,Rocket pod
+W016,Phalanx CIWS,1500,2000,1,0,Point defense
+W017,RIM-116 RAM,9000,9000,5,2,Rolling Airframe Missile
+W018,RIM-162 ESSM,50000,50000,10,3,Extended range SAM
+
+# TABLE: weather_patterns
+location_id,season,avg_temp_c,avg_humidity_percent,avg_wind_speed_kt,avg_visibility_km,precipitation_days_per_month,typhoon_probability,notes
+LOC-GUAM,Dry,28,75,12,15,8,0.15,November to May
+LOC-GUAM,Wet,29,85,15,10,18,0.35,June to October
+LOC-OKINAWA,Spring,22,70,10,12,12,0.10,March to May
+LOC-OKINAWA,Summer,28,80,12,10,15,0.25,June to August
+LOC-OKINAWA,Fall,24,75,11,13,10,0.15,September to November
+LOC-OKINAWA,Winter,18,65,14,15,8,0.05,December to February
+LOC-PHIL,Dry,30,70,10,12,5,0.20,December to May
+LOC-PHIL,Wet,32,85,12,8,20,0.40,June to November
+LOC-AUS,Dry,32,45,15,20,3,0.05,May to October
+LOC-AUS,Wet,30,75,18,15,12,0.15,November to April
+LOC-AUSTERE,Year Round,29,80,14,12,15,0.30,Tropical climate
+
+# TABLE: equipment_inventory
+equipment_id,unit_id,equipment_type,model,quantity,weight_kg,power_required_w,maintenance_interval_hours,notes
+EQ001,MEU-CE,Computer,Laptop,45,2.5,60,0,Command and control
+EQ002,MEU-CE,Printer,Network Printer,8,25,500,720,Document production
+EQ003,MEU-CE,Generator,5kW Generator,12,85,0,500,Power generation
+EQ004,MEU-CE,Generator,10kW Generator,6,150,0,500,Power generation
+EQ005,BLT-1/5,Night Vision,PVS-14,450,0.4,0,0,Individual night vision
+EQ006,BLT-1/5,Thermal Sight,AN/PAS-13,120,1.2,0,0,Weapon thermal sight
+EQ007,BLT-1/5,Radio,AN/PRC-117G,180,1.8,15,0,Individual radio
+EQ008,BLT-1/5,Radio,AN/PRC-150,25,8.5,50,0,Manpack radio
+EQ009,BLT-1/5,Generator,3kW Generator,35,65,0,500,Field power
+EQ010,BLT-1/5,Generator,5kW Generator,15,85,0,500,Field power
+EQ011,ACE-31,Test Equipment,Avionics Test Set,8,45,200,0,Aircraft maintenance
+EQ012,ACE-31,Generator,15kW Generator,6,250,0,500,Aviation power
+EQ013,ACE-31,Generator,30kW Generator,4,450,0,500,Aviation power
+EQ014,LCE-15,Forklift,5-Ton Forklift,8,3500,0,250,Material handling
+EQ015,LCE-15,Forklift,10-Ton Forklift,4,6500,0,250,Material handling
+EQ016,LCE-15,Crane,20-Ton Crane,2,12000,0,500,Heavy lifting
+EQ017,LCE-15,Generator,10kW Generator,12,150,0,500,Power generation
+EQ018,LCE-15,Generator,20kW Generator,6,300,0,500,Power generation
+EQ019,ARG-1,Crane,Ship Crane,8,15000,0,500,Shipboard crane
+EQ020,ARG-1,Generator,Ship Generator,15,5000,0,1000,Shipboard power
+
+# TABLE: ammunition_consumption_rates
+weapon_id,tempo,rounds_per_engagement,engagements_per_day,rounds_per_day,weight_kg_per_day,notes
+W001,PRESENCE,30,2,60,0.72,Training and presence
+W001,DEFENSIVE,60,4,240,2.88,Defensive operations
+W001,OFFENSIVE,90,6,540,6.48,Offensive operations
+W002,PRESENCE,20,2,40,0.48,Training and presence
+W002,DEFENSIVE,45,4,180,2.16,Defensive operations
+W002,OFFENSIVE,80,6,480,5.76,Offensive operations
+W003,PRESENCE,200,1,200,5.00,Training and presence
+W003,DEFENSIVE,500,3,1500,37.50,Defensive operations
+W003,OFFENSIVE,800,5,4000,100.00,Offensive operations
+W004,PRESENCE,100,1,100,4.60,Training and presence
+W004,DEFENSIVE,300,2,600,27.60,Defensive operations
+W004,OFFENSIVE,500,4,2000,92.00,Offensive operations
+W005,PRESENCE,10,1,10,17.00,Training and presence
+W005,DEFENSIVE,30,3,90,153.00,Defensive operations
+W005,OFFENSIVE,50,5,250,425.00,Offensive operations
+W006,PRESENCE,15,1,15,63.00,Training and presence
+W006,DEFENSIVE,40,3,120,504.00,Defensive operations
+W006,OFFENSIVE,70,5,350,1470.00,Offensive operations
+W007,PRESENCE,0,0,0,0.00,Training and presence
+W007,DEFENSIVE,2,2,4,47.20,Defensive operations
+W007,OFFENSIVE,4,4,16,188.80,Offensive operations
+W008,PRESENCE,0,0,0,0.00,Training and presence
+W008,DEFENSIVE,1,2,2,45.20,Defensive operations
+W008,OFFENSIVE,3,4,12,271.20,Offensive operations
+W009,PRESENCE,50,1,50,20.00,Training and presence
+W009,DEFENSIVE,200,3,600,240.00,Defensive operations
+W009,OFFENSIVE,400,5,2000,800.00,Offensive operations
+W010,PRESENCE,0,0,0,0.00,Training and presence
+W010,DEFENSIVE,1,1,1,10.10,Defensive operations
+W010,OFFENSIVE,2,2,4,40.40,Offensive operations
+W011,PRESENCE,100,1,100,10.00,Training and presence
+W011,DEFENSIVE,300,3,900,90.00,Defensive operations
+W011,OFFENSIVE,600,5,3000,300.00,Offensive operations
+W012,PRESENCE,0,0,0,0.00,Training and presence
+W012,DEFENSIVE,14,2,28,173.60,Defensive operations
+W012,OFFENSIVE,38,4,152,942.40,Offensive operations
+W013,PRESENCE,0,0,0,0.00,Training and presence
+W013,DEFENSIVE,2,2,4,194.00,Defensive operations
+W013,OFFENSIVE,6,4,24,1164.00,Offensive operations
+W014,PRESENCE,200,1,200,5.00,Training and presence
+W014,DEFENSIVE,500,2,1000,25.00,Defensive operations
+W014,OFFENSIVE,800,4,3200,80.00,Offensive operations
+W015,PRESENCE,0,0,0,0.00,Training and presence
+W015,DEFENSIVE,14,1,14,86.80,Defensive operations
+W015,OFFENSIVE,38,3,114,706.80,Offensive operations
+
+# TABLE: spare_parts_inventory
+part_id,part_name,part_category,nsn,unit_cost_usd,quantity_on_hand,quantity_required_per_month,reorder_point,lead_time_days,supplier_location,notes
+PART001,Engine Filter MV-22B,Airframe,2940-01-XXX-XXXX,450,24,48,12,45,CONUS,Primary engine filter
+PART002,Transmission Oil CH-53E,Airframe,9150-01-XXX-XXXX,850,18,36,9,60,CONUS,Transmission fluid
+PART003,Rotor Blade AH-1Z,Airframe,1615-01-XXX-XXXX,45000,2,1,1,90,CONUS,Critical spare
+PART004,Tire HMMWV,Vehicle,2530-01-XXX-XXXX,180,120,80,40,30,CONUS,Standard tire
+PART005,Brake Pad MTVR,Vehicle,2530-01-XXX-XXXX,320,45,30,15,30,CONUS,Brake components
+PART006,Transmission LAV-25,Vehicle,2520-01-XXX-XXXX,8500,3,2,1,60,CONUS,Major component
+PART007,Hydraulic Pump AAV-7A1,Vehicle,4320-01-XXX-XXXX,3200,6,4,2,45,CONUS,Hydraulic system
+PART008,Radio Module AN/PRC-117G,Electronics,5820-01-XXX-XXXX,2500,35,20,10,30,CONUS,Communication equipment
+PART009,Battery Vehicle,Electronics,6140-01-XXX-XXXX,180,150,100,50,21,Regional,Standard battery
+PART010,Optics PVS-14,Electronics,5855-01-XXX-XXXX,3500,25,15,8,45,CONUS,Night vision
+PART011,Weapon Barrel M240B,Weapons,1005-01-XXX-XXXX,850,12,8,4,30,CONUS,Weapon component
+PART012,Missile Guidance Javelin,Weapons,1410-01-XXX-XXXX,125000,8,4,2,90,CONUS,Critical munition
+PART013,Fuel Pump Aircraft,Airframe,2910-01-XXX-XXXX,4500,15,10,5,45,CONUS,Aviation fuel system
+PART014,Avionics Module,Electronics,5820-01-XXX-XXXX,15000,8,4,2,60,CONUS,Aviation electronics
+PART015,Cooling System Vehicle,Vehicle,2930-01-XXX-XXXX,1200,20,12,6,30,Regional,Vehicle cooling
+
+# TABLE: vehicle_fuel_consumption
+vehicle_id,tempo,operating_hours_per_day,km_per_day,fuel_consumed_liters_per_day,notes
+V001,PRESENCE,4,80,20,Presence patrols
+V001,DEFENSIVE,8,160,40,Defensive operations
+V001,OFFENSIVE,12,240,60,Offensive operations
+V002,PRESENCE,4,80,20,Presence patrols
+V002,DEFENSIVE,8,160,40,Defensive operations
+V002,OFFENSIVE,12,240,60,Offensive operations
+V006,PRESENCE,6,120,14.4,Presence operations
+V006,DEFENSIVE,10,200,24,Defensive operations
+V006,OFFENSIVE,14,280,33.6,Offensive operations
+V009,PRESENCE,4,100,11.7,Supply runs
+V009,DEFENSIVE,6,150,17.5,Increased supply
+V009,OFFENSIVE,8,200,23.3,High tempo supply
+V016,PRESENCE,2,40,5.7,Amphibious operations
+V016,DEFENSIVE,4,80,11.3,Amphibious operations
+V016,OFFENSIVE,6,120,17,Amphibious operations
+
+# TABLE: aircraft_fuel_consumption
+aircraft_id,tempo,flight_hours_per_day,sorties_per_day,fuel_consumed_liters_per_day,notes
+A001,PRESENCE,2,1,2400,Presence flights
+A001,DEFENSIVE,4,2,4800,Defensive operations
+A001,OFFENSIVE,6,3,7200,Offensive operations
+A013,PRESENCE,1.5,1,2700,Presence flights
+A013,DEFENSIVE,3,2,5400,Defensive operations
+A013,OFFENSIVE,5,3,9000,Offensive operations
+A017,PRESENCE,2,2,900,Presence flights
+A017,DEFENSIVE,4,4,1800,Defensive operations
+A017,OFFENSIVE,6,6,2700,Offensive operations
+A023,PRESENCE,2,2,760,Presence flights
+A023,DEFENSIVE,3,3,1140,Defensive operations
+A023,OFFENSIVE,4,4,1520,Offensive operations
+
+# TABLE: critical_supply_items
+item_id,item_name,category,consumption_rate_per_day,days_of_supply_on_hand,critical_threshold_days,priority_level,substitution_available,notes
+CRIT001,JP-5 Aviation Fuel,Fuel,520,15,7,Very High,No,Primary aviation fuel
+CRIT002,JP-8 Vehicle Fuel,Fuel,348,20,10,Very High,No,Primary vehicle fuel
+CRIT003,5.56mm Ammunition,Ammunition,45000,10,5,Very High,No,Primary small arms
+CRIT004,7.62mm Ammunition,Ammunition,15000,12,6,Very High,No,Machine gun ammunition
+CRIT005,81mm Mortar Rounds,Ammunition,350,8,4,High,No,Mortar ammunition
+CRIT006,Hellfire Missiles,Ammunition,24,6,3,Very High,No,Attack helicopter munitions
+CRIT007,Water Potable,Water,727,14,7,Very High,Yes,Desalination available
+CRIT008,Food Rations,Food,38.5,30,15,High,Yes,Can extend rations
+CRIT009,Medical Supplies,Medical,285,21,10,Very High,No,Critical medical items
+CRIT010,Vehicle Spare Parts,Spares,56,25,12,High,Yes,Some substitution
+CRIT011,Aircraft Spare Parts,Spares,28,18,9,Very High,No,Critical aviation parts
+CRIT012,Batteries,Electronics,200,15,7,Medium,Yes,Some substitution
+CRIT013,Radio Equipment,Electronics,5,30,15,Medium,Yes,Backup systems
+CRIT014,Engine Oil,Maintenance,500,20,10,High,Yes,Some substitution
+CRIT015,Hydraulic Fluid,Maintenance,300,18,9,High,Yes,Some substitution
+
+# TABLE: supply_chain_dependencies
+dependent_item_id,dependency_item_id,dependency_type,ratio_required,lead_time_days,notes
+CRIT001,SP-GUAM,Source,1.0,3,Primary fuel source
+CRIT001,SP-AUS,Source,0.3,7,Backup fuel source
+CRIT002,SP-GUAM,Source,0.6,3,Primary fuel source
+CRIT002,SP-OKINAWA,Source,0.4,2,Forward fuel source
+CRIT003,SP-AUS,Source,1.0,10,Primary ammunition source
+CRIT003,SP-GUAM,Source,0.5,5,Backup ammunition source
+CRIT004,SP-AUS,Source,1.0,10,Primary ammunition source
+CRIT005,SP-AUS,Source,1.0,10,Primary ammunition source
+CRIT006,SP-GUAM,Source,1.0,14,Missile source
+CRIT006,CONUS,Source,0.5,45,Backup missile source
+CRIT007,WATER001,Production,0.4,0,Desalination plant
+CRIT007,WATER002,Production,0.3,0,Desalination plant
+CRIT007,WATER005,Production,0.1,0,Portable units
+CRIT007,SP-GUAM,Source,0.2,2,Water delivery
+CRIT010,PART001,Component,0.1,45,Spare parts dependency
+CRIT010,PART002,Component,0.1,60,Spare parts dependency
+CRIT011,PART003,Component,0.05,90,Critical spare parts
+CRIT011,PART013,Component,0.15,45,Aviation parts
+
+# TABLE: operational_constraints
+constraint_id,constraint_type,affected_resource,constraint_value,time_period,notes
+CONST001,Weather,Typhoon Season,0.35,June-October,Reduced operations probability
+CONST002,Weather,Monsoon Season,0.40,June-November,Philippines operations
+CONST003,Range,Aircraft Range,1627,Continuous,MV-22B unrefueled range
+CONST004,Range,Aircraft Range,833,Continuous,CH-53E unrefueled range
+CONST005,Range,Vehicle Range,650,Continuous,LAV-25 unrefueled range
+CONST006,Capacity,Port Throughput,1200,Per Day,Guam container capacity
+CONST007,Capacity,Airfield Sorties,180,Per Day,Guam airfield capacity
+CONST008,Capacity,Ship Cargo,12000,Total,Ship cargo capacity
+CONST009,Maintenance,Aircraft Availability,0.75,Continuous,Operational availability
+CONST010,Maintenance,Vehicle Availability,0.80,Continuous,Operational availability
+CONST011,Personnel,Rest Requirements,8,Per Day,Minimum rest hours
+CONST012,Personnel,Deployment Duration,180,Total,Maximum deployment days
+CONST013,Supply,Resupply Frequency,7,Per Week,Minimum resupply interval
+CONST014,Threat,Interdiction Probability,0.25,Per Day,High threat area
+CONST015,Threat,Cyber Attack Risk,0.30,Per Day,Strategic node risk
+
+# TABLE: resource_allocation_priorities
+resource_id,resource_name,priority_level,allocation_rule,notes
+RES001,JP-5 Aviation Fuel,1,Critical First,Aviation operations priority
+RES002,JP-8 Vehicle Fuel,2,Proportional,Vehicle operations
+RES003,5.56mm Ammunition,1,Critical First,Small arms priority
+RES004,81mm Mortar Rounds,2,Proportional,Indirect fire support
+RES005,Hellfire Missiles,1,Critical First,Attack helicopter priority
+RES006,Water,1,Equal Distribution,All units equal
+RES007,Food,3,Equal Distribution,All units equal
+RES008,Medical Supplies,1,Critical First,Medical priority
+RES009,Vehicle Spare Parts,2,Proportional,Vehicle maintenance
+RES010,Aircraft Spare Parts,1,Critical First,Aviation maintenance priority
+RES011,Communication Equipment,2,Command First,Command priority
+RES012,Generator Fuel,2,Proportional,Power generation
+RES013,Vehicle Batteries,3,First Come First Served,Standard allocation
+RES014,Optics Equipment,2,Combat Units First,Combat priority
+RES015,Engineering Equipment,3,Proportional,Engineering support
+
+# TABLE: consumption_by_equipment_type
+equipment_type,tempo,fuel_m3_day,ammo_tons_day,spares_kg_day,water_m3_day,food_kg_day,medical_kg_day,notes
+MV-22B,PRESENCE,0.144,0,45,0,0,0,Per aircraft
+MV-22B,DEFENSIVE,0.288,0,85,0,0,0,Per aircraft
+MV-22B,OFFENSIVE,0.432,0,150,0,0,0,Per aircraft
+CH-53E,PRESENCE,0.162,0,60,0,0,0,Per aircraft
+CH-53E,DEFENSIVE,0.324,0,120,0,0,0,Per aircraft
+CH-53E,OFFENSIVE,0.540,0,200,0,0,0,Per aircraft
+AH-1Z,PRESENCE,0.054,0.125,35,0,0,0,Per aircraft
+AH-1Z,DEFENSIVE,0.108,0.667,65,0,0,0,Per aircraft
+AH-1Z,OFFENSIVE,0.162,1.833,120,0,0,0,Per aircraft
+UH-1Y,PRESENCE,0.046,0,25,0,0,0,Per aircraft
+UH-1Y,DEFENSIVE,0.069,0.043,45,0,0,0,Per aircraft
+UH-1Y,OFFENSIVE,0.092,0.118,65,0,0,0,Per aircraft
+LAV-25,PRESENCE,0.020,0.020,12,0,0,0,Per vehicle
+LAV-25,DEFENSIVE,0.040,0.080,25,0,0,0,Per vehicle
+LAV-25,OFFENSIVE,0.060,0.160,45,0,0,0,Per vehicle
+HMMWV,PRESENCE,0.014,0,3,0,0,0,Per vehicle
+HMMWV,DEFENSIVE,0.024,0,6,0,0,0,Per vehicle
+HMMWV,OFFENSIVE,0.034,0,9,0,0,0,Per vehicle
+MTVR,PRESENCE,0.012,0,8,0,0,0,Per vehicle
+MTVR,DEFENSIVE,0.018,0,15,0,0,0,Per vehicle
+MTVR,OFFENSIVE,0.023,0,25,0,0,0,Per vehicle
+AAV-7A1,PRESENCE,0.006,0,15,0,0,0,Per vehicle
+AAV-7A1,DEFENSIVE,0.011,0,30,0,0,0,Per vehicle
+AAV-7A1,OFFENSIVE,0.017,0,50,0,0,0,Per vehicle
+
+# TABLE: transit_times_detailed
+origin_id,destination_id,transport_mode,vehicle_type,distance_km,transit_time_hours,capacity_tons,reliability,threat_level,notes
+SP-GUAM,SP-OKINAWA,Surface,Container Ship,2500,72,5000,0.88,medium,Standard container route
+SP-GUAM,SP-OKINAWA,Air,C-17,2500,3.5,50,0.85,medium,Strategic airlift
+SP-GUAM,SP-OKINAWA,Air,C-130,2500,4.5,20,0.80,medium,Tactical airlift
+SP-GUAM,SP-PHIL,Surface,Container Ship,2780,80,4000,0.82,medium,Container route
+SP-GUAM,SP-PHIL,Air,C-17,2780,4.0,50,0.80,medium,Strategic airlift
+SP-GUAM,SP-AUSTERE,Surface,LCU,1575,45,150,0.65,high,Landing craft
+SP-GUAM,SP-AUSTERE,Air,MV-22B,1575,2.5,4.5,0.70,high,Tiltrotor transport
+SP-GUAM,SP-AUSTERE,Air,CH-53E,1575,3.0,6.8,0.65,high,Heavy lift
+SP-OKINAWA,SP-AUSTERE,Surface,LCU,926,28,150,0.70,high,Landing craft
+SP-OKINAWA,SP-AUSTERE,Air,MV-22B,926,1.5,4.5,0.75,high,Tiltrotor transport
+SP-OKINAWA,SP-AUSTERE,Air,CH-53E,926,2.0,6.8,0.70,high,Heavy lift
+AF-GUAM,AF-AUSTERE,Air,MV-22B,1575,2.5,4.5,0.70,high,Direct air route
+AF-GUAM,AF-AUSTERE,Air,CH-53E,1575,3.0,6.8,0.65,high,Direct air route
+AF-GUAM,AF-PHIL,Air,C-17,2780,4.0,50,0.80,medium,Strategic airlift route
+AF-GUAM,AF-PHIL,Air,C-130,2780,4.5,20,0.78,medium,Tactical airlift route
+AF-GUAM,AF-PHIL,Air,MV-22B,2780,5.5,4.5,0.75,medium,Tiltrotor transport
+AF-OKINAWA,AF-AUSTERE,Air,MV-22B,926,1.5,4.5,0.75,high,Direct air route
+AF-OKINAWA,AF-AUSTERE,Air,CH-53E,926,2.0,6.8,0.70,high,Direct air route
+
+# TABLE: personnel_transfer_capabilities
+origin_airfield_id,destination_airfield_id,transport_mode,aircraft_type,personnel_capacity_per_sortie,transit_time_hours,sorties_available_per_day,reliability,threat_level,notes
+AF-GUAM,AF-PHIL,Air,C-17,102,4.0,2,0.80,medium,Strategic airlift 102 personnel per sortie
+AF-GUAM,AF-PHIL,Air,C-130,92,4.5,3,0.78,medium,Tactical airlift 92 personnel per sortie
+AF-GUAM,AF-PHIL,Air,MV-22B,24,5.5,4,0.75,medium,Tiltrotor 24 personnel per sortie
+AF-GUAM,AF-PHIL,Air,CH-53E,37,6.0,2,0.72,medium,Heavy lift 37 personnel per sortie
+AF-OKINAWA,AF-PHIL,Air,C-17,102,2.0,2,0.82,medium,Strategic airlift 102 personnel per sortie
+AF-OKINAWA,AF-PHIL,Air,C-130,92,2.5,3,0.80,medium,Tactical airlift 92 personnel per sortie
+AF-OKINAWA,AF-PHIL,Air,MV-22B,24,3.0,4,0.77,medium,Tiltrotor 24 personnel per sortie
+AF-AUS,AF-PHIL,Air,C-17,102,5.0,1,0.75,medium,Strategic airlift 102 personnel per sortie
+AF-AUS,AF-PHIL,Air,C-130,92,5.5,2,0.73,medium,Tactical airlift 92 personnel per sortie
+
+# TABLE: personnel_surplus_deficit
+airfield_id,personnel_category,current_count,required_count,surplus_deficit,available_for_transfer,notes
+AF-GUAM,Air Traffic Controller,30,24,6,5,Excess personnel available
+AF-GUAM,Approach Controller,16,12,4,3,Excess personnel available
+AF-GUAM,Ground Controller,11,8,3,2,Excess personnel available
+AF-GUAM,Fuel Handler,20,16,4,3,Excess personnel available
+AF-GUAM,Cargo Handler,26,20,6,5,Excess personnel available
+AF-PHIL,Air Traffic Controller,12,16,-4,0,Personnel deficit
+AF-PHIL,Approach Controller,5,8,-3,0,Personnel deficit
+AF-PHIL,Ground Controller,4,6,-2,0,Personnel deficit
+AF-PHIL,Fuel Handler,9,12,-3,0,Personnel deficit
+AF-PHIL,Cargo Handler,10,14,-4,0,Personnel deficit
+
+# TABLE: personnel_consumption_rates
+personnel_category,tempo,water_liters_day,food_kg_day,medical_kg_day,notes
+Officer,PRESENCE,15,2.5,0.02,Standard consumption
+Officer,DEFENSIVE,16,2.6,0.035,Increased consumption
+Officer,OFFENSIVE,17,2.7,0.05,High tempo consumption
+Enlisted,PRESENCE,12,2.0,0.015,Standard consumption
+Enlisted,DEFENSIVE,13,2.1,0.025,Increased consumption
+Enlisted,OFFENSIVE,14,2.2,0.035,High tempo consumption
+Aviation Personnel,PRESENCE,14,2.3,0.02,Aviation specific
+Aviation Personnel,DEFENSIVE,15,2.4,0.03,Aviation specific
+Aviation Personnel,OFFENSIVE,16,2.5,0.04,Aviation specific
+Maintenance Personnel,PRESENCE,13,2.2,0.018,Maintenance specific
+Maintenance Personnel,DEFENSIVE,14,2.3,0.028,Maintenance specific
+Maintenance Personnel,OFFENSIVE,15,2.4,0.038,Maintenance specific
+
+# TABLE: maintenance_personnel_requirements
+equipment_type,maintenance_type,personnel_required,specialty_level,hours_required,notes
+MV-22B,Post Flight,2,Advanced,0.5,After each flight
+MV-22B,Phase Inspection,4,Expert,4,Every 25 flight hours
+MV-22B,Intermediate,6,Expert,24,Every 200 flight hours
+CH-53E,Post Flight,2,Advanced,0.5,After each flight
+CH-53E,Phase Inspection,5,Expert,6,Every 25 flight hours
+CH-53E,Intermediate,8,Expert,32,Every 200 flight hours
+AH-1Z,Post Flight,2,Advanced,0.5,After each flight
+AH-1Z,Phase Inspection,3,Expert,3,Every 25 flight hours
+AH-1Z,Intermediate,5,Expert,20,Every 200 flight hours
+LAV-25,Preventive,2,Advanced,8,Every 500 km
+LAV-25,Intermediate,4,Expert,40,Every 5000 km
+HMMWV,Preventive,1,Basic,4,Every 500 km
+HMMWV,Intermediate,2,Advanced,24,Every 5000 km
+MTVR,Preventive,2,Advanced,6,Every 500 km
+MTVR,Intermediate,3,Expert,32,Every 5000 km
+
+# TABLE: operational_availability
+equipment_type,tempo,operational_availability,maintenance_ratio,notes
+MV-22B,PRESENCE,0.80,0.20,80 percent available
+MV-22B,DEFENSIVE,0.75,0.25,75 percent available
+MV-22B,OFFENSIVE,0.70,0.30,70 percent available
+CH-53E,PRESENCE,0.75,0.25,75 percent available
+CH-53E,DEFENSIVE,0.70,0.30,70 percent available
+CH-53E,OFFENSIVE,0.65,0.35,65 percent available
+AH-1Z,PRESENCE,0.85,0.15,85 percent available
+AH-1Z,DEFENSIVE,0.80,0.20,80 percent available
+AH-1Z,OFFENSIVE,0.75,0.25,75 percent available
+UH-1Y,PRESENCE,0.85,0.15,85 percent available
+UH-1Y,DEFENSIVE,0.80,0.20,80 percent available
+UH-1Y,OFFENSIVE,0.75,0.25,75 percent available
+LAV-25,PRESENCE,0.85,0.15,85 percent available
+LAV-25,DEFENSIVE,0.80,0.20,80 percent available
+LAV-25,OFFENSIVE,0.75,0.25,75 percent available
+HMMWV,PRESENCE,0.90,0.10,90 percent available
+HMMWV,DEFENSIVE,0.85,0.15,85 percent available
+HMMWV,OFFENSIVE,0.80,0.20,80 percent available
+MTVR,PRESENCE,0.88,0.12,88 percent available
+MTVR,DEFENSIVE,0.83,0.17,83 percent available
+MTVR,OFFENSIVE,0.78,0.22,78 percent available
+AAV-7A1,PRESENCE,0.80,0.20,80 percent available
+AAV-7A1,DEFENSIVE,0.75,0.25,75 percent available
+AAV-7A1,OFFENSIVE,0.70,0.30,70 percent available
+
+# TABLE: fuel_storage_time_series
+day,location_id,storage_id,fuel_type,level_m3,capacity_m3,consumption_m3_day,refill_m3_day,operational_status,notes
+0,LOC-OKINAWA,FUEL003,JP-5,15000,18000,380,0,Operational,Pre-strike baseline
+1,LOC-OKINAWA,FUEL003,JP-5,8820,12000,380,0,Damaged,Enemy strike - tank damage and fuel loss
+2,LOC-OKINAWA,FUEL003,JP-5,8440,12000,380,0,Damaged,Consumption continues
+3,LOC-OKINAWA,FUEL003,JP-5,8060,12000,380,0,Damaged,Consumption continues
+4,LOC-OKINAWA,FUEL003,JP-5,7680,12000,380,0,Damaged,Consumption continues
+5,LOC-OKINAWA,FUEL003,JP-5,7300,12000,380,0,Damaged,Consumption continues
+6,LOC-OKINAWA,FUEL003,JP-5,6850,12000,450,0,Damaged,Increased consumption - OFFENSIVE tempo
+7,LOC-OKINAWA,FUEL003,JP-5,6400,12000,450,0,Damaged,Increased consumption - OFFENSIVE tempo
+8,LOC-OKINAWA,FUEL003,JP-5,5950,12000,450,0,Damaged,Increased consumption - OFFENSIVE tempo
+9,LOC-OKINAWA,FUEL003,JP-5,5500,12000,450,0,Damaged,Increased consumption - OFFENSIVE tempo
+10,LOC-OKINAWA,FUEL003,JP-5,5120,12000,380,0,Damaged,Consumption returns to DEFENSIVE tempo
+11,LOC-OKINAWA,FUEL003,JP-5,4740,12000,380,0,Damaged,Consumption continues
+12,LOC-OKINAWA,FUEL003,JP-5,4360,12000,380,0,Damaged,Consumption continues
+13,LOC-OKINAWA,FUEL003,JP-5,4010,12000,350,0,Damaged,Consumption - PRESENCE tempo
+14,LOC-OKINAWA,FUEL003,JP-5,3500,12000,350,0,Damaged,Current level - PRESENCE tempo
+15,LOC-OKINAWA,FUEL003,JP-5,3150,12000,350,0,Damaged,Projected - PRESENCE tempo
+16,LOC-OKINAWA,FUEL003,JP-5,2800,12000,350,0,Damaged,Projected - PRESENCE tempo
+17,LOC-OKINAWA,FUEL003,JP-5,2450,12000,350,0,Damaged,Projected - PRESENCE tempo
+18,LOC-OKINAWA,FUEL003,JP-5,2100,12000,350,0,Damaged,Projected - PRESENCE tempo
+19,LOC-OKINAWA,FUEL003,JP-5,1750,12000,350,0,Damaged,Projected - PRESENCE tempo
+20,LOC-OKINAWA,FUEL003,JP-5,1400,12000,350,0,Damaged,Projected - PRESENCE tempo
+21,LOC-OKINAWA,FUEL003,JP-5,1050,12000,350,0,Damaged,Projected - PRESENCE tempo
+22,LOC-OKINAWA,FUEL003,JP-5,700,12000,350,0,Damaged,Projected - PRESENCE tempo
+23,LOC-OKINAWA,FUEL003,JP-5,350,12000,350,0,Damaged,Projected - PRESENCE tempo
+24,LOC-OKINAWA,FUEL003,JP-5,0,12000,350,0,Damaged,Projected - PRESENCE tempo - fuel exhausted
+0,LOC-GUAM,FUEL001,JP-5,20000,25000,320,500,Operational,Baseline
+1,LOC-GUAM,FUEL001,JP-5,20180,25000,320,500,Operational,Normal operations
+2,LOC-GUAM,FUEL001,JP-5,20360,25000,320,500,Operational,Normal operations
+3,LOC-GUAM,FUEL001,JP-5,20540,25000,380,500,Operational,Normal operations
+4,LOC-GUAM,FUEL001,JP-5,20660,25000,380,500,Operational,Normal operations
+5,LOC-GUAM,FUEL001,JP-5,20780,25000,380,500,Operational,Normal operations
+6,LOC-GUAM,FUEL001,JP-5,20900,25000,450,500,Operational,Normal operations
+7,LOC-GUAM,FUEL001,JP-5,21050,25000,450,500,Operational,Normal operations
+8,LOC-GUAM,FUEL001,JP-5,21200,25000,450,500,Operational,Normal operations
+9,LOC-GUAM,FUEL001,JP-5,21350,25000,450,500,Operational,Normal operations
+10,LOC-GUAM,FUEL001,JP-5,21500,25000,380,500,Operational,Normal operations
+11,LOC-GUAM,FUEL001,JP-5,21620,25000,380,500,Operational,Normal operations
+12,LOC-GUAM,FUEL001,JP-5,21740,25000,380,500,Operational,Normal operations
+13,LOC-GUAM,FUEL001,JP-5,21860,25000,320,500,Operational,Normal operations
+14,LOC-GUAM,FUEL001,JP-5,21940,25000,320,500,Operational,Normal operations
+0,LOC-PHIL,FUEL005,JP-5,12000,15000,280,350,Operational,Baseline
+1,LOC-PHIL,FUEL005,JP-5,12070,15000,280,350,Operational,Normal operations
+2,LOC-PHIL,FUEL005,JP-5,12140,15000,280,350,Operational,Normal operations
+3,LOC-PHIL,FUEL005,JP-5,12210,15000,320,350,Operational,Normal operations
+4,LOC-PHIL,FUEL005,JP-5,12240,15000,320,350,Operational,Normal operations
+5,LOC-PHIL,FUEL005,JP-5,12270,15000,320,350,Operational,Normal operations
+6,LOC-PHIL,FUEL005,JP-5,12300,15000,380,350,Operational,Normal operations
+7,LOC-PHIL,FUEL005,JP-5,12270,15000,380,350,Operational,Normal operations
+8,LOC-PHIL,FUEL005,JP-5,12240,15000,380,350,Operational,Normal operations
+9,LOC-PHIL,FUEL005,JP-5,12210,15000,380,350,Operational,Normal operations
+10,LOC-PHIL,FUEL005,JP-5,12180,15000,320,350,Operational,Normal operations
+11,LOC-PHIL,FUEL005,JP-5,12150,15000,320,350,Operational,Normal operations
+12,LOC-PHIL,FUEL005,JP-5,12120,15000,320,350,Operational,Normal operations
+13,LOC-PHIL,FUEL005,JP-5,12090,15000,280,350,Operational,Normal operations
+14,LOC-PHIL,FUEL005,JP-5,12060,15000,280,350,Operational,Normal operations
+0,LOC-AUS,FUEL007,JP-5,35000,40000,520,800,Operational,Baseline
+1,LOC-AUS,FUEL007,JP-5,35280,40000,520,800,Operational,Normal operations
+2,LOC-AUS,FUEL007,JP-5,35560,40000,520,800,Operational,Normal operations
+3,LOC-AUS,FUEL007,JP-5,35840,40000,600,800,Operational,Normal operations
+4,LOC-AUS,FUEL007,JP-5,36040,40000,600,800,Operational,Normal operations
+5,LOC-AUS,FUEL007,JP-5,36240,40000,600,800,Operational,Normal operations
+6,LOC-AUS,FUEL007,JP-5,36440,40000,720,800,Operational,Normal operations
+7,LOC-AUS,FUEL007,JP-5,36520,40000,720,800,Operational,Normal operations
+8,LOC-AUS,FUEL007,JP-5,36600,40000,720,800,Operational,Normal operations
+9,LOC-AUS,FUEL007,JP-5,36680,40000,720,800,Operational,Normal operations
+10,LOC-AUS,FUEL007,JP-5,36760,40000,600,800,Operational,Normal operations
+11,LOC-AUS,FUEL007,JP-5,36960,40000,600,800,Operational,Normal operations
+12,LOC-AUS,FUEL007,JP-5,37160,40000,600,800,Operational,Normal operations
+13,LOC-AUS,FUEL007,JP-5,37360,40000,520,800,Operational,Normal operations
+14,LOC-AUS,FUEL007,JP-5,37540,40000,520,800,Operational,Normal operations
+
+# TABLE: fuel_resupply_schedule
+ship_id,ship_name,ship_type,fuel_capacity_m3,fuel_type,origin_location,destination_location,scheduled_departure_day,estimated_arrival_day,actual_status,delay_reason,notes
+TANKER-001,USNS Henry J. Kaiser,Oil Tanker,15000,JP-5,LOC-AUS,LOC-OKINAWA,5,10,Delayed,Mechanical failure - engine repair,Original resupply ship - delayed indefinitely awaiting parts
+TANKER-002,USNS Patuxent,Oil Tanker,12000,JP-5,LOC-AUS,LOC-OKINAWA,12,29,On Schedule,None,Next available resupply ship - arrives day 29
+TANKER-003,USNS Yukon,Oil Tanker,18000,JP-5,LOC-AUS,LOC-GUAM,8,12,On Schedule,None,Regular resupply
+TANKER-004,USNS Rappahannock,Oil Tanker,14000,JP-5,LOC-AUS,LOC-PHIL,10,14,On Schedule,None,Regular resupply
+TANKER-005,USNS Pecos,Oil Tanker,16000,JP-5,LOC-AUS,LOC-AUS,0,0,On Schedule,None,Internal transfer
+TANKER-006,USNS Big Horn,Oil Tanker,15000,JP-5,LOC-GUAM,LOC-OKINAWA,15,18,On Schedule,None,Emergency resupply option
+TANKER-007,USNS Guadalupe,Oil Tanker,13000,JP-5,LOC-AUS,LOC-OKINAWA,20,25,On Schedule,None,Next scheduled resupply
+
+# TABLE: fuel_consumption_by_location
+location_id,fuel_type,tempo,consumption_m3_day,source_units,notes
+LOC-OKINAWA,JP-5,PRESENCE,350,ACE-31,Aviation fuel consumption
+LOC-OKINAWA,JP-5,DEFENSIVE,380,ACE-31,Aviation fuel consumption
+LOC-OKINAWA,JP-5,OFFENSIVE,450,ACE-31,Aviation fuel consumption
+LOC-GUAM,JP-5,PRESENCE,320,ACE-31,Aviation fuel consumption
+LOC-GUAM,JP-5,DEFENSIVE,380,ACE-31,Aviation fuel consumption
+LOC-GUAM,JP-5,OFFENSIVE,450,ACE-31,Aviation fuel consumption
+LOC-PHIL,JP-5,PRESENCE,280,ACE-31,Aviation fuel consumption
+LOC-PHIL,JP-5,DEFENSIVE,320,ACE-31,Aviation fuel consumption
+LOC-PHIL,JP-5,OFFENSIVE,380,ACE-31,Aviation fuel consumption
+LOC-AUS,JP-5,PRESENCE,520,Multiple,Multiple unit consumption
+LOC-AUS,JP-5,DEFENSIVE,600,Multiple,Multiple unit consumption
+LOC-AUS,JP-5,OFFENSIVE,720,Multiple,Multiple unit consumption
+
